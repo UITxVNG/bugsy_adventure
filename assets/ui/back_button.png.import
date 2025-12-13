@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qsnhv18m14qn"
-path="res://.godot/imported/level10.png-352ebefbc52174ecc97f6769b1e9cf68.ctex"
+uid="uid://buja532a8f7d6"
+path="res://.godot/imported/back_button.png-bc0b30fefb1d822971bd03e60c74f164.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/level10.png"
-dest_files=["res://.godot/imported/level10.png-352ebefbc52174ecc97f6769b1e9cf68.ctex"]
+source_file="res://assets/ui/back_button.png"
+dest_files=["res://.godot/imported/back_button.png-bc0b30fefb1d822971bd03e60c74f164.ctex"]
 
 [params]
 

@@ -1,65 +1,407 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgecvij6t4q38"]
+[gd_scene load_steps=8 format=3 uid="uid://cgecvij6t4q38"]
 
 [ext_resource type="Script" uid="uid://cqjc141t8dk2j" path="res://scenes/levels/chose_level/chose_level.gd" id="1_8r37s"]
-[ext_resource type="Texture2D" uid="uid://c3px27gbtiri2" path="res://assets/ui/level1.png" id="2_3o145"]
-[ext_resource type="Texture2D" uid="uid://0jdjcixejnes" path="res://assets/ui/level2.png" id="3_pdq8a"]
-[ext_resource type="Texture2D" uid="uid://dgrhsx8q5vggd" path="res://assets/ui/level3.png" id="4_uvh6p"]
-[ext_resource type="Texture2D" uid="uid://cta3cdqjw0sjm" path="res://assets/ui/level4.png" id="5_sxpue"]
-[ext_resource type="Texture2D" uid="uid://slcsjypk03l" path="res://assets/ui/level5.png" id="6_dywcc"]
-[ext_resource type="Texture2D" uid="uid://dr0ytejonisvu" path="res://assets/ui/level6.png" id="7_u4ed3"]
-[ext_resource type="Texture2D" uid="uid://bta7r6wplawog" path="res://assets/ui/level7.png" id="8_4mdi5"]
-[ext_resource type="Texture2D" uid="uid://bt6cjm7g1f6tg" path="res://assets/ui/level8.png" id="9_evglp"]
-[ext_resource type="Texture2D" uid="uid://binxiad1cllpn" path="res://assets/ui/level9.png" id="10_lovcd"]
-[ext_resource type="Texture2D" uid="uid://qsnhv18m14qn" path="res://assets/ui/level10.png" id="11_l7u2x"]
+[ext_resource type="Texture2D" uid="uid://bodoo2n8a5x78" path="res://assets/ui/map_icon.png" id="2_4se2q"]
+[ext_resource type="Texture2D" uid="uid://ixj0d03uu4ed" path="res://assets/ui/popup.png" id="2_s87au"]
+[ext_resource type="Texture2D" uid="uid://dkr52akf4vlmv" path="res://assets/ui/lock_icon_02.png" id="3_c4koa"]
+[ext_resource type="Script" uid="uid://c12ttwfvsbv3u" path="res://scenes/levels/chose_level/button_1.gd" id="3_qvf2l"]
+[ext_resource type="FontFile" uid="uid://bitum065glxbo" path="res://assets/fonts/big_font.fnt" id="3_ypxdh"]
+[ext_resource type="Texture2D" uid="uid://c06r28miqwu6u" path="res://assets/ui/lock_icon_01.png" id="4_ypxdh"]
 
-[node name="ChoseLevel" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="ChoseLevel" type="MarginContainer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.97
+offset_right = 957.0
+offset_bottom = 369.44
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.55, 0.63)
+size_flags_vertical = 4
 script = ExtResource("1_8r37s")
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
-offset_right = 2082.0
-offset_bottom = 1043.0
+[node name="OverlayColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.0352941, 0.54902, 0.870588, 0.694118)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_s87au")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -30.0
+offset_right = 80.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
 columns = 5
 
-[node name="Level1" type="Button" parent="GridContainer"]
+[node name="Button1" type="TextureButton" parent="TextureRect/GridContainer"]
 layout_mode = 2
-icon = ExtResource("2_3o145")
+texture_normal = ExtResource("2_4se2q")
+texture_pressed = ExtResource("2_4se2q")
+texture_hover = ExtResource("2_4se2q")
+texture_disabled = ExtResource("2_4se2q")
+texture_focused = ExtResource("2_4se2q")
+script = ExtResource("3_qvf2l")
 
-[node name="Level2" type="Button" parent="GridContainer"]
-layout_mode = 2
-icon = ExtResource("3_pdq8a")
+[node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button1"]
+visible = false
+layout_mode = 0
+offset_left = -1.81818
+offset_top = -4.7619
+offset_right = 33.1818
+offset_bottom = 17.2381
+texture = ExtResource("4_ypxdh")
+expand_mode = 2
 
-[node name="Level3" type="Button" parent="GridContainer"]
-layout_mode = 2
-icon = ExtResource("4_uvh6p")
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Button1"]
+layout_mode = 0
+offset_top = 7.93651
+offset_right = 29.0
+offset_bottom = 30.9365
+theme_override_fonts/font = ExtResource("3_ypxdh")
+text = "1"
+horizontal_alignment = 1
 
-[node name="Level4" type="Button" parent="GridContainer"]
-layout_mode = 2
-icon = ExtResource("5_sxpue")
+[node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button1"]
+layout_mode = 0
+offset_left = 7.27273
+offset_top = -6.34921
+offset_right = 23.2727
+offset_bottom = 6.65079
+texture = ExtResource("3_c4koa")
 
-[node name="Level5" type="Button" parent="GridContainer"]
+[node name="Button2" type="TextureButton" parent="TextureRect/GridContainer"]
 layout_mode = 2
-icon = ExtResource("6_dywcc")
+texture_normal = ExtResource("2_4se2q")
+texture_pressed = ExtResource("2_4se2q")
+texture_hover = ExtResource("2_4se2q")
+texture_disabled = ExtResource("2_4se2q")
+texture_focused = ExtResource("2_4se2q")
+script = ExtResource("3_qvf2l")
 
-[node name="Level6" type="Button" parent="GridContainer"]
-layout_mode = 2
-icon = ExtResource("7_u4ed3")
+[node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button2"]
+visible = false
+layout_mode = 0
+offset_left = -1.81818
+offset_top = -4.7619
+offset_right = 33.1818
+offset_bottom = 17.2381
+texture = ExtResource("4_ypxdh")
+expand_mode = 2
 
-[node name="Level7" type="Button" parent="GridContainer"]
-layout_mode = 2
-icon = ExtResource("8_4mdi5")
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Button2"]
+layout_mode = 0
+offset_top = 7.93651
+offset_right = 29.0
+offset_bottom = 30.9365
+theme_override_fonts/font = ExtResource("3_ypxdh")
+text = "2"
+horizontal_alignment = 1
 
-[node name="Level8" type="Button" parent="GridContainer"]
-layout_mode = 2
-icon = ExtResource("9_evglp")
+[node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button2"]
+layout_mode = 0
+offset_left = 7.27273
+offset_top = -6.34921
+offset_right = 23.2727
+offset_bottom = 6.65079
+texture = ExtResource("3_c4koa")
 
-[node name="Level9" type="Button" parent="GridContainer"]
+[node name="Button3" type="TextureButton" parent="TextureRect/GridContainer"]
 layout_mode = 2
-icon = ExtResource("10_lovcd")
+texture_normal = ExtResource("2_4se2q")
+texture_pressed = ExtResource("2_4se2q")
+texture_hover = ExtResource("2_4se2q")
+texture_disabled = ExtResource("2_4se2q")
+texture_focused = ExtResource("2_4se2q")
+script = ExtResource("3_qvf2l")
 
-[node name="Level10" type="Button" parent="GridContainer"]
+[node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button3"]
+visible = false
+layout_mode = 0
+offset_left = -1.81818
+offset_top = -4.7619
+offset_right = 33.1818
+offset_bottom = 17.2381
+texture = ExtResource("4_ypxdh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Button3"]
+layout_mode = 0
+offset_top = 7.93651
+offset_right = 29.0
+offset_bottom = 30.9365
+theme_override_fonts/font = ExtResource("3_ypxdh")
+text = "3"
+horizontal_alignment = 1
+
+[node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button3"]
+layout_mode = 0
+offset_left = 7.27273
+offset_top = -6.34921
+offset_right = 23.2727
+offset_bottom = 6.65079
+texture = ExtResource("3_c4koa")
+
+[node name="Button4" type="TextureButton" parent="TextureRect/GridContainer"]
 layout_mode = 2
-icon = ExtResource("11_l7u2x")
+texture_normal = ExtResource("2_4se2q")
+texture_pressed = ExtResource("2_4se2q")
+texture_hover = ExtResource("2_4se2q")
+texture_disabled = ExtResource("2_4se2q")
+texture_focused = ExtResource("2_4se2q")
+script = ExtResource("3_qvf2l")
+
+[node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button4"]
+visible = false
+layout_mode = 0
+offset_left = -1.81818
+offset_top = -4.7619
+offset_right = 33.1818
+offset_bottom = 17.2381
+texture = ExtResource("4_ypxdh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Button4"]
+layout_mode = 0
+offset_top = 7.93651
+offset_right = 29.0
+offset_bottom = 30.9365
+theme_override_fonts/font = ExtResource("3_ypxdh")
+text = "4"
+horizontal_alignment = 1
+
+[node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button4"]
+layout_mode = 0
+offset_left = 7.27273
+offset_top = -6.34921
+offset_right = 23.2727
+offset_bottom = 6.65079
+texture = ExtResource("3_c4koa")
+
+[node name="Button5" type="TextureButton" parent="TextureRect/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_4se2q")
+texture_pressed = ExtResource("2_4se2q")
+texture_hover = ExtResource("2_4se2q")
+texture_disabled = ExtResource("2_4se2q")
+texture_focused = ExtResource("2_4se2q")
+script = ExtResource("3_qvf2l")
+
+[node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button5"]
+visible = false
+layout_mode = 0
+offset_left = -1.81818
+offset_top = -4.7619
+offset_right = 33.1818
+offset_bottom = 17.2381
+texture = ExtResource("4_ypxdh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Button5"]
+layout_mode = 0
+offset_top = 7.93651
+offset_right = 29.0
+offset_bottom = 30.9365
+theme_override_fonts/font = ExtResource("3_ypxdh")
+text = "5"
+horizontal_alignment = 1
+
+[node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button5"]
+layout_mode = 0
+offset_left = 7.27273
+offset_top = -6.34921
+offset_right = 23.2727
+offset_bottom = 6.65079
+texture = ExtResource("3_c4koa")
+
+[node name="Button6" type="TextureButton" parent="TextureRect/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_4se2q")
+texture_pressed = ExtResource("2_4se2q")
+texture_hover = ExtResource("2_4se2q")
+texture_disabled = ExtResource("2_4se2q")
+texture_focused = ExtResource("2_4se2q")
+script = ExtResource("3_qvf2l")
+
+[node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button6"]
+visible = false
+layout_mode = 0
+offset_left = -1.81818
+offset_top = -4.7619
+offset_right = 33.1818
+offset_bottom = 17.2381
+texture = ExtResource("4_ypxdh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Button6"]
+layout_mode = 0
+offset_top = 7.93651
+offset_right = 29.0
+offset_bottom = 30.9365
+theme_override_fonts/font = ExtResource("3_ypxdh")
+text = "6"
+horizontal_alignment = 1
+
+[node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button6"]
+layout_mode = 0
+offset_left = 7.27273
+offset_top = -6.34921
+offset_right = 23.2727
+offset_bottom = 6.65079
+texture = ExtResource("3_c4koa")
+
+[node name="Button7" type="TextureButton" parent="TextureRect/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_4se2q")
+texture_pressed = ExtResource("2_4se2q")
+texture_hover = ExtResource("2_4se2q")
+texture_disabled = ExtResource("2_4se2q")
+texture_focused = ExtResource("2_4se2q")
+script = ExtResource("3_qvf2l")
+
+[node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button7"]
+visible = false
+layout_mode = 0
+offset_left = -1.81818
+offset_top = -4.7619
+offset_right = 33.1818
+offset_bottom = 17.2381
+texture = ExtResource("4_ypxdh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Button7"]
+layout_mode = 0
+offset_top = 7.93651
+offset_right = 29.0
+offset_bottom = 30.9365
+theme_override_fonts/font = ExtResource("3_ypxdh")
+text = "7"
+horizontal_alignment = 1
+
+[node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button7"]
+layout_mode = 0
+offset_left = 7.27273
+offset_top = -6.34921
+offset_right = 23.2727
+offset_bottom = 6.65079
+texture = ExtResource("3_c4koa")
+
+[node name="Button8" type="TextureButton" parent="TextureRect/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_4se2q")
+texture_pressed = ExtResource("2_4se2q")
+texture_hover = ExtResource("2_4se2q")
+texture_disabled = ExtResource("2_4se2q")
+texture_focused = ExtResource("2_4se2q")
+script = ExtResource("3_qvf2l")
+
+[node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button8"]
+visible = false
+layout_mode = 0
+offset_left = -1.81818
+offset_top = -4.7619
+offset_right = 33.1818
+offset_bottom = 17.2381
+texture = ExtResource("4_ypxdh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Button8"]
+layout_mode = 0
+offset_top = 7.93651
+offset_right = 29.0
+offset_bottom = 30.9365
+theme_override_fonts/font = ExtResource("3_ypxdh")
+text = "8"
+horizontal_alignment = 1
+
+[node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button8"]
+layout_mode = 0
+offset_left = 7.27273
+offset_top = -6.34921
+offset_right = 23.2727
+offset_bottom = 6.65079
+texture = ExtResource("3_c4koa")
+
+[node name="Button9" type="TextureButton" parent="TextureRect/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_4se2q")
+texture_pressed = ExtResource("2_4se2q")
+texture_hover = ExtResource("2_4se2q")
+texture_disabled = ExtResource("2_4se2q")
+texture_focused = ExtResource("2_4se2q")
+script = ExtResource("3_qvf2l")
+
+[node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button9"]
+visible = false
+layout_mode = 0
+offset_left = -1.81818
+offset_top = -4.7619
+offset_right = 33.1818
+offset_bottom = 17.2381
+texture = ExtResource("4_ypxdh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Button9"]
+layout_mode = 0
+offset_top = 7.93651
+offset_right = 29.0
+offset_bottom = 30.9365
+theme_override_fonts/font = ExtResource("3_ypxdh")
+text = "9"
+horizontal_alignment = 1
+
+[node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button9"]
+layout_mode = 0
+offset_left = 7.27273
+offset_top = -6.34921
+offset_right = 23.2727
+offset_bottom = 6.65079
+texture = ExtResource("3_c4koa")
+
+[node name="Button10" type="TextureButton" parent="TextureRect/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_4se2q")
+texture_pressed = ExtResource("2_4se2q")
+texture_hover = ExtResource("2_4se2q")
+texture_disabled = ExtResource("2_4se2q")
+texture_focused = ExtResource("2_4se2q")
+script = ExtResource("3_qvf2l")
+
+[node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button10"]
+visible = false
+layout_mode = 0
+offset_left = -1.81818
+offset_top = -4.7619
+offset_right = 33.1818
+offset_bottom = 17.2381
+texture = ExtResource("4_ypxdh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer/Button10"]
+layout_mode = 0
+offset_top = 7.93651
+offset_right = 29.0
+offset_bottom = 30.9365
+theme_override_fonts/font = ExtResource("3_ypxdh")
+text = "10"
+horizontal_alignment = 1
+
+[node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button10"]
+layout_mode = 0
+offset_left = 7.27273
+offset_top = -6.34921
+offset_right = 23.2727
+offset_bottom = 6.65079
+texture = ExtResource("3_c4koa")

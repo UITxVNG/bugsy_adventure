@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://binxiad1cllpn"
-path="res://.godot/imported/level9.png-626edeb0a8a3fb579d3d75593d4297ce.ctex"
+uid="uid://dkr52akf4vlmv"
+path="res://.godot/imported/lock_icon_02.png-930d59bb6e2a831be6ecae67e848e204.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/level9.png"
-dest_files=["res://.godot/imported/level9.png-626edeb0a8a3fb579d3d75593d4297ce.ctex"]
+source_file="res://assets/ui/lock_icon_02.png"
+dest_files=["res://.godot/imported/lock_icon_02.png-930d59bb6e2a831be6ecae67e848e204.ctex"]
 
 [params]
 
