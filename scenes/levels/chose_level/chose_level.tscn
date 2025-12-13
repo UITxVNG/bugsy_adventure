@@ -9,14 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://c06r28miqwu6u" path="res://assets/ui/lock_icon_01.png" id="4_ypxdh"]
 
 [node name="ChoseLevel" type="MarginContainer"]
-anchors_preset = -1
+process_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.97
-offset_right = 957.0
-offset_bottom = 369.44
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.55, 0.63)
 size_flags_vertical = 4
 script = ExtResource("1_8r37s")
 
@@ -38,370 +36,512 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.5
-offset_top = -30.0
-offset_right = 80.5
-offset_bottom = 30.0
+offset_left = -180.0
+offset_top = -80.0
+offset_right = 180.0
+offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
 columns = 5
 
 [node name="Button1" type="TextureButton" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("2_4se2q")
 texture_pressed = ExtResource("2_4se2q")
 texture_hover = ExtResource("2_4se2q")
 texture_disabled = ExtResource("2_4se2q")
 texture_focused = ExtResource("2_4se2q")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("3_qvf2l")
 
 [node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button1"]
 visible = false
-layout_mode = 0
-offset_left = -1.81818
-offset_top = -4.7619
-offset_right = 33.1818
-offset_bottom = 17.2381
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_ypxdh")
-expand_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="TextureRect/GridContainer/Button1"]
-layout_mode = 0
-offset_top = 7.93651
-offset_right = 29.0
-offset_bottom = 30.9365
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_ypxdh")
+theme_override_font_sizes/font_size = 36
 text = "1"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button1"]
-layout_mode = 0
-offset_left = 7.27273
-offset_top = -6.34921
-offset_right = 23.2727
-offset_bottom = 6.65079
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = 16.0
+grow_horizontal = 2
 texture = ExtResource("3_c4koa")
+expand_mode = 1
 
 [node name="Button2" type="TextureButton" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("2_4se2q")
 texture_pressed = ExtResource("2_4se2q")
 texture_hover = ExtResource("2_4se2q")
 texture_disabled = ExtResource("2_4se2q")
 texture_focused = ExtResource("2_4se2q")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("3_qvf2l")
 
 [node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button2"]
 visible = false
-layout_mode = 0
-offset_left = -1.81818
-offset_top = -4.7619
-offset_right = 33.1818
-offset_bottom = 17.2381
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_ypxdh")
-expand_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="TextureRect/GridContainer/Button2"]
-layout_mode = 0
-offset_top = 7.93651
-offset_right = 29.0
-offset_bottom = 30.9365
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_ypxdh")
+theme_override_font_sizes/font_size = 36
 text = "2"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button2"]
-layout_mode = 0
-offset_left = 7.27273
-offset_top = -6.34921
-offset_right = 23.2727
-offset_bottom = 6.65079
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = 16.0
+grow_horizontal = 2
 texture = ExtResource("3_c4koa")
+expand_mode = 1
 
 [node name="Button3" type="TextureButton" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("2_4se2q")
 texture_pressed = ExtResource("2_4se2q")
 texture_hover = ExtResource("2_4se2q")
 texture_disabled = ExtResource("2_4se2q")
 texture_focused = ExtResource("2_4se2q")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("3_qvf2l")
 
 [node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button3"]
 visible = false
-layout_mode = 0
-offset_left = -1.81818
-offset_top = -4.7619
-offset_right = 33.1818
-offset_bottom = 17.2381
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_ypxdh")
-expand_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="TextureRect/GridContainer/Button3"]
-layout_mode = 0
-offset_top = 7.93651
-offset_right = 29.0
-offset_bottom = 30.9365
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_ypxdh")
+theme_override_font_sizes/font_size = 36
 text = "3"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button3"]
-layout_mode = 0
-offset_left = 7.27273
-offset_top = -6.34921
-offset_right = 23.2727
-offset_bottom = 6.65079
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = 16.0
+grow_horizontal = 2
 texture = ExtResource("3_c4koa")
+expand_mode = 1
 
 [node name="Button4" type="TextureButton" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("2_4se2q")
 texture_pressed = ExtResource("2_4se2q")
 texture_hover = ExtResource("2_4se2q")
 texture_disabled = ExtResource("2_4se2q")
 texture_focused = ExtResource("2_4se2q")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("3_qvf2l")
 
 [node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button4"]
 visible = false
-layout_mode = 0
-offset_left = -1.81818
-offset_top = -4.7619
-offset_right = 33.1818
-offset_bottom = 17.2381
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_ypxdh")
-expand_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="TextureRect/GridContainer/Button4"]
-layout_mode = 0
-offset_top = 7.93651
-offset_right = 29.0
-offset_bottom = 30.9365
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_ypxdh")
+theme_override_font_sizes/font_size = 36
 text = "4"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button4"]
-layout_mode = 0
-offset_left = 7.27273
-offset_top = -6.34921
-offset_right = 23.2727
-offset_bottom = 6.65079
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = 16.0
+grow_horizontal = 2
 texture = ExtResource("3_c4koa")
+expand_mode = 1
 
 [node name="Button5" type="TextureButton" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("2_4se2q")
 texture_pressed = ExtResource("2_4se2q")
 texture_hover = ExtResource("2_4se2q")
 texture_disabled = ExtResource("2_4se2q")
 texture_focused = ExtResource("2_4se2q")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("3_qvf2l")
 
 [node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button5"]
 visible = false
-layout_mode = 0
-offset_left = -1.81818
-offset_top = -4.7619
-offset_right = 33.1818
-offset_bottom = 17.2381
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_ypxdh")
-expand_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="TextureRect/GridContainer/Button5"]
-layout_mode = 0
-offset_top = 7.93651
-offset_right = 29.0
-offset_bottom = 30.9365
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_ypxdh")
+theme_override_font_sizes/font_size = 36
 text = "5"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button5"]
-layout_mode = 0
-offset_left = 7.27273
-offset_top = -6.34921
-offset_right = 23.2727
-offset_bottom = 6.65079
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = 16.0
+grow_horizontal = 2
 texture = ExtResource("3_c4koa")
+expand_mode = 1
 
 [node name="Button6" type="TextureButton" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("2_4se2q")
 texture_pressed = ExtResource("2_4se2q")
 texture_hover = ExtResource("2_4se2q")
 texture_disabled = ExtResource("2_4se2q")
 texture_focused = ExtResource("2_4se2q")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("3_qvf2l")
 
 [node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button6"]
 visible = false
-layout_mode = 0
-offset_left = -1.81818
-offset_top = -4.7619
-offset_right = 33.1818
-offset_bottom = 17.2381
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_ypxdh")
-expand_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="TextureRect/GridContainer/Button6"]
-layout_mode = 0
-offset_top = 7.93651
-offset_right = 29.0
-offset_bottom = 30.9365
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_ypxdh")
+theme_override_font_sizes/font_size = 36
 text = "6"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button6"]
-layout_mode = 0
-offset_left = 7.27273
-offset_top = -6.34921
-offset_right = 23.2727
-offset_bottom = 6.65079
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = 16.0
+grow_horizontal = 2
 texture = ExtResource("3_c4koa")
+expand_mode = 1
 
 [node name="Button7" type="TextureButton" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("2_4se2q")
 texture_pressed = ExtResource("2_4se2q")
 texture_hover = ExtResource("2_4se2q")
 texture_disabled = ExtResource("2_4se2q")
 texture_focused = ExtResource("2_4se2q")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("3_qvf2l")
 
 [node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button7"]
 visible = false
-layout_mode = 0
-offset_left = -1.81818
-offset_top = -4.7619
-offset_right = 33.1818
-offset_bottom = 17.2381
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_ypxdh")
-expand_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="TextureRect/GridContainer/Button7"]
-layout_mode = 0
-offset_top = 7.93651
-offset_right = 29.0
-offset_bottom = 30.9365
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_ypxdh")
+theme_override_font_sizes/font_size = 36
 text = "7"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button7"]
-layout_mode = 0
-offset_left = 7.27273
-offset_top = -6.34921
-offset_right = 23.2727
-offset_bottom = 6.65079
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = 16.0
+grow_horizontal = 2
 texture = ExtResource("3_c4koa")
+expand_mode = 1
 
 [node name="Button8" type="TextureButton" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("2_4se2q")
 texture_pressed = ExtResource("2_4se2q")
 texture_hover = ExtResource("2_4se2q")
 texture_disabled = ExtResource("2_4se2q")
 texture_focused = ExtResource("2_4se2q")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("3_qvf2l")
 
 [node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button8"]
 visible = false
-layout_mode = 0
-offset_left = -1.81818
-offset_top = -4.7619
-offset_right = 33.1818
-offset_bottom = 17.2381
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_ypxdh")
-expand_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="TextureRect/GridContainer/Button8"]
-layout_mode = 0
-offset_top = 7.93651
-offset_right = 29.0
-offset_bottom = 30.9365
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_ypxdh")
+theme_override_font_sizes/font_size = 36
 text = "8"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button8"]
-layout_mode = 0
-offset_left = 7.27273
-offset_top = -6.34921
-offset_right = 23.2727
-offset_bottom = 6.65079
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = 16.0
+grow_horizontal = 2
 texture = ExtResource("3_c4koa")
+expand_mode = 1
 
 [node name="Button9" type="TextureButton" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("2_4se2q")
 texture_pressed = ExtResource("2_4se2q")
 texture_hover = ExtResource("2_4se2q")
 texture_disabled = ExtResource("2_4se2q")
 texture_focused = ExtResource("2_4se2q")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("3_qvf2l")
 
 [node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button9"]
 visible = false
-layout_mode = 0
-offset_left = -1.81818
-offset_top = -4.7619
-offset_right = 33.1818
-offset_bottom = 17.2381
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_ypxdh")
-expand_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="TextureRect/GridContainer/Button9"]
-layout_mode = 0
-offset_top = 7.93651
-offset_right = 29.0
-offset_bottom = 30.9365
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_ypxdh")
+theme_override_font_sizes/font_size = 36
 text = "9"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button9"]
-layout_mode = 0
-offset_left = 7.27273
-offset_top = -6.34921
-offset_right = 23.2727
-offset_bottom = 6.65079
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = 16.0
+grow_horizontal = 2
 texture = ExtResource("3_c4koa")
+expand_mode = 1
 
 [node name="Button10" type="TextureButton" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("2_4se2q")
 texture_pressed = ExtResource("2_4se2q")
 texture_hover = ExtResource("2_4se2q")
 texture_disabled = ExtResource("2_4se2q")
 texture_focused = ExtResource("2_4se2q")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("3_qvf2l")
 
 [node name="LockedOverlay" type="TextureRect" parent="TextureRect/GridContainer/Button10"]
 visible = false
-layout_mode = 0
-offset_left = -1.81818
-offset_top = -4.7619
-offset_right = 33.1818
-offset_bottom = 17.2381
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_ypxdh")
-expand_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="TextureRect/GridContainer/Button10"]
-layout_mode = 0
-offset_top = 7.93651
-offset_right = 29.0
-offset_bottom = 30.9365
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_ypxdh")
+theme_override_font_sizes/font_size = 36
 text = "10"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CompletedIcon" type="TextureRect" parent="TextureRect/GridContainer/Button10"]
-layout_mode = 0
-offset_left = 7.27273
-offset_top = -6.34921
-offset_right = 23.2727
-offset_bottom = 6.65079
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 12.0
+offset_bottom = 16.0
+grow_horizontal = 2
 texture = ExtResource("3_c4koa")
+expand_mode = 1
