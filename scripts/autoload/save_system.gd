@@ -79,3 +79,24 @@ func delete_save_file() -> void:
 	if has_save_file():
 		DirAccess.remove_absolute(SAVE_FILE)
 		print("Save file deleted")
+
+# Save max unlocked level
+func save_max_level(level: int) -> void:
+	var data = load_checkpoint_data()
+	data["max_unlocked_level"] = level
+	save_checkpoint_data(data)
+	print("Max unlocked level saved: ", level)
+
+# Load max unlocked level (returns 1 if not found)
+func load_max_level() -> int:
+	var data = load_checkpoint_data()
+	if data.has("max_unlocked_level"):
+		return int(data["max_unlocked_level"])
+	return 1 # Default: only level 1 unlocked
+
+# Unlock next level (call this when player completes a level)
+func unlock_next_level(completed_level: int) -> void:
+	var current_max = load_max_level()
+	if completed_level >= current_max:
+		save_max_level(completed_level + 1)
+		print("Unlocked level: ", completed_level + 1)
