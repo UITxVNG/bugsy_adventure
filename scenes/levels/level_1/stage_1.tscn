@@ -63,6 +63,8 @@ position = Vector2(0, 400)
 [node name="Door" parent="." instance=ExtResource("6_bfafv")]
 position = Vector2(-535, -679)
 target_stage = "uid://boxp0pgyq4pfu"
+target_door = "DoorA"
+current_level = 1
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("8_wuvcj")]
 
@@ -112,6 +114,3 @@ hint_text = "A/D : di chuyển"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("12_mvtk4")]
-
-[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@33781" to="TileMapLayer/@Area2D@33781" method="_on_body_entered"]
