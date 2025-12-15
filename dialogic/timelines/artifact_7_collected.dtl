@@ -1,0 +1,9 @@
+join foxy center
+foxy: Đây là... Di Vật cuối cùng...
+[wait time="1.0"]
+dark_voice: "CUỐI CÙNG! 7 Di Vật! Lõi sẽ HOÀN CHỈNH!"
+dark_voice: "Giờ hãy đến Đền Biển Sâu! Số phận chờ đợi ngươi!"
+foxy: Ta có đủ sức mạnh... nhưng ta sẽ dùng nó như thế nào...?
+[wait time="0.5"]
+dark_voice: Đường đến Đền Biển Sâu đã mở...
+leave

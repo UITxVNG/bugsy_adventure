@@ -25,6 +25,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Crabbo": "res://dialogic/characters/Crabbo.dch",
+"Unknown_Spirit": "res://dialogic/characters/Unknown_Spirit.dch",
 "dark_voice": "res://dialogic/characters/dark_voice.dch",
 "foxy": "res://dialogic/characters/foxy.dch",
 "mush": "res://dialogic/characters/mush.dch"
@@ -33,6 +34,15 @@ directories/dtl_directory={
 "artifact_1_collected": "res://dialogic/timelines/artifact_1_collected.dtl",
 "artifact_2_collected": "res://dialogic/timelines/artifact_2_collected.dtl",
 "artifact_3_collected": "res://dialogic/timelines/artifact_3_collected.dtl",
+"artifact_4_collected": "res://dialogic/timelines/artifact_4_collected.dtl",
+"artifact_5_collected": "res://dialogic/timelines/artifact_5_collected.dtl",
+"artifact_6_choice": "res://dialogic/timelines/artifact_6_choice.dtl",
+"artifact_6_collected": "res://dialogic/timelines/artifact_6_collected.dtl",
+"artifact_7_collected": "res://dialogic/timelines/artifact_7_collected.dtl",
+"artifact_7_refused": "res://dialogic/timelines/artifact_7_refused.dtl",
+"final_choice": "res://dialogic/timelines/final_choice.dtl",
+"final_choice_bad": "res://dialogic/timelines/final_choice_bad.dtl",
+"final_choice_good": "res://dialogic/timelines/final_choice_good.dtl",
 "level8_warning": "res://dialogic/timelines/level8_warning.dtl",
 "map1_intro_monologue": "res://dialogic/timelines/map1_intro_monologue.dtl",
 "map1_mush_first_meet": "res://dialogic/timelines/map1_mush_first_meet.dtl",
@@ -79,6 +89,10 @@ audio/channel_defaults={
 }
 }
 glossary/default_case_sensitive=true
+variables={
+"artifacts_collected": 0,
+"can_make_final_choice": false
+}
 
 [display]
 

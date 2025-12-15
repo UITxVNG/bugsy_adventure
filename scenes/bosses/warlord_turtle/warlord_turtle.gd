@@ -16,6 +16,8 @@ var _skill_cursor = 0
 @onready var _right_factory := $Direction/RightFactory
 @onready var _rocket_factories := [$RocketPositions/RocketFactory1, $RocketPositions/RocketFactory2, $RocketPositions/RocketFactory3, $RocketPositions/RocketFactory4]
 
+signal boss_defeated
+
 func _ready() -> void:
 	super._ready()
 	_init_hit_area()
@@ -129,4 +131,5 @@ func take_damage(a, b = null) -> void:
 
 
 func _die() -> void:
+	emit_signal("boss_defeated")
 	queue_free()

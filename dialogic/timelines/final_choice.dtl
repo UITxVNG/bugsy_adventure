@@ -1,0 +1,21 @@
+[label good_path]
+
+foxy: Ta đã thu thập đủ 7 Di Vật...
+foxy: Ta có quyền lựa chọn số phận của mình.
+
+<Empty Text Event>
+- Từ chối Dark Voice
+	[signal]
+	[end]
+
+- Chấp nhận Dark Voice
+	[signal]
+	[end]
+
+
+[label bad_path]
+
+foxy: Ta chưa đủ sức mạnh...
+foxy: Ta chỉ có {artifacts_collected} Di Vật...
+[signal]
+<Empty Text Event>

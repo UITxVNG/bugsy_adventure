@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmka416h6f5pu"]
+
+[ext_resource type="Texture2D" uid="uid://b8iefgkj22lls" path="res://assets/sprites/island/background/good_end.jpg" id="1_dv3u5"]
+[ext_resource type="Script" uid="uid://cql5kytbsh5fe" path="res://scenes/endings/good_ending.gd" id="1_gf2da"]
+
+[node name="Stage" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gf2da")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(570.984, 319.542)
+scale = Vector2(1.1348, 1.23121)
+texture = ExtResource("1_dv3u5")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+self_modulate = Color(0.157558, 0.223189, 0.18582, 1)
+layout_mode = 0
+offset_left = 242.0
+offset_top = 162.0
+offset_right = 282.0
+offset_bottom = 200.0
+
+[node name="StoryLabel" type="Label" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="SkipHint" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1051.0
+offset_top = -20.0
+offset_right = 1105.0
+offset_bottom = 3.0
+text = "Bỏ qua"
