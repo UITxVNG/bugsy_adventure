@@ -64,10 +64,20 @@ func use_key() -> bool:
 	return false
 
 func has_key() -> bool:
-	return keys > 0	
+	return keys > 0
 
 func get_gold() -> int:
 	return coins
+
+func spend_coins(amount: int) -> bool:
+	if coins >= amount:
+		coins -= amount
+		coin_changed.emit(coins)
+		print("Spent ", amount, " coins. Remaining: ", coins)
+		return true
+	else:
+		print("Not enough coins! Need ", amount, " but only have ", coins)
+		return false
 
 func get_keys() -> int:
 	return keys

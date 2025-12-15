@@ -26,4 +26,4 @@ func _on_overlay_color_rect_gui_input(event: InputEvent) -> void:
 
 
 func _on_close_texture_button_pressed() -> void:
-    hide_popup()
+	hide_popup()
