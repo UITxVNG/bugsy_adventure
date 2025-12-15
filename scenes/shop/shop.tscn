@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=4 uid="uid://bq8tmitujr3bq"]
+
+[ext_resource type="TileSet" uid="uid://c8m8q0fe452q3" path="res://assets/tilesets/tile_set.tres" id="1_ptf86"]
+[ext_resource type="PackedScene" uid="uid://b7vsyf8ftkiw5" path="res://assets/raw/02-King Pig/kingpig.tscn" id="2_ctpgp"]
+[ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://scenes/objects/door/door.tscn" id="2_qaxay"]
+[ext_resource type="Texture2D" uid="uid://drjefag0ebuup" path="res://assets/raw/14-TileSets/flag.png" id="2_xcdpw"]
+[ext_resource type="Texture2D" uid="uid://d2b3kx6h0ka0w" path="res://assets/raw/06-Pig Hide in the Box/Fall (26x20).png" id="4_jp048"]
+[ext_resource type="PackedScene" uid="uid://cr06n1w1va6i8" path="res://scenes/player/player.tscn" id="6_ptf86"]
+[ext_resource type="Texture2D" uid="uid://bvcjfa708hi8j" path="res://assets/raw/14-TileSets/bar.png" id="7_tp26b"]
+[ext_resource type="Texture2D" uid="uid://d0ll1rl1pgsbx" path="res://assets/raw/14-TileSets/window.png" id="8_vk20h"]
+
+[node name="Shop" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAABgAQAAQAAAD//wEABgAFAAIAAAD//wIABgAFAAIAAAD//wMABgAFAAIAAAAAAAMABgABAAgAAAAAAAQABgABAAgAAAAAAAUABgABAAkAAAAAAAYABgACAAUAAAAOAAMABgAFAAIAAAAMAAAABgACAAUAAAALAAAABgACAAUAAAAKAAAABgACAAUAAAAJAAAABgACAAUAAAAIAAAABgACAAUAAAAHAAAABgACAAUAAAAGAAAABgACAAUAAAAFAAAABgACAAUAAAAEAAAABgACAAUAAAADAAAABgACAAUAAAACAAAABgACAAUAAAABAAAABgACAAUAAAD//wUABgAFAAIAAAD//wQABgAFAAIAAAANAAAABgACAAUAAAAOAAEABgAFAAIAAAAOAAQABgAFAAIAAAAOAAUABgAFAAIAAAAOAAYABgARAAUAAAAMAAYABgACAAUAAAAKAAYABgACAAUAAAAJAAYABgACAAUAAAAIAAYABgACAAUAAAADAAYABgACAAUAAAAEAAYABgACAAUAAAAFAAYABgACAAUAAAAGAAYABgACAAUAAAAHAAYABgACAAUAAAABAAYABgACAAUAAAAAAAEABgABAAcAAAABAAEABgACAAcAAAACAAEABgACAAcAAAADAAEABgACAAcAAAAEAAEABgACAAcAAAAFAAEABgACAAcAAAAGAAEABgACAAcAAAAHAAEABgACAAcAAAAIAAEABgACAAcAAAAJAAEABgACAAcAAAAKAAEABgACAAcAAAALAAEABgACAAcAAAAAAAIABgABAAgAAAABAAIABgACAAgAAAACAAIABgAKAAgAAAADAAIABgAKAAgAAAAEAAIABgAKAAgAAAAFAAIABgAKAAgAAAAGAAIABgAKAAgAAAAHAAIABgAKAAgAAAAIAAIABgAKAAgAAAAJAAIABgAKAAgAAAAKAAIABgACAAgAAAALAAIABgACAAgAAAAMAAIABgACAAgAAAAMAAMABgACAAgAAAALAAMABgACAAgAAAAKAAMABgACAAgAAAAJAAMABgACAAgAAAAIAAMABgACAAgAAAAHAAMABgACAAgAAAAGAAMABgACAAgAAAAFAAMABgACAAgAAAAEAAMABgACAAgAAAADAAMABgACAAgAAAACAAMABgACAAgAAAABAAMABgACAAgAAAABAAQABgACAAgAAAABAAUABgACAAkAAAACAAUABgACAAkAAAACAAQABgACAAgAAAADAAQABgACAAgAAAAEAAQABgACAAgAAAAEAAUABgACAAkAAAADAAUABgACAAkAAAAFAAUABgACAAkAAAAFAAQABgACAAgAAAAGAAQABgACAAgAAAAGAAUABgACAAkAAAAHAAUABgACAAkAAAAHAAQABgACAAgAAAAIAAQABgACAAgAAAAIAAUABgACAAkAAAAJAAUABgACAAkAAAAKAAUABgACAAkAAAAJAAQABgACAAgAAAAKAAQABgACAAgAAAALAAUABgACAAkAAAALAAQABgACAAgAAAAMAAQABgACAAgAAAAMAAUABgACAAkAAAAOAAAABgARAAQAAAAAAAAABgACAAUAAAD//wYABgAQAAUAAAACAAYABgACAAUAAAANAAYABgACAAUAAAALAAYABgACAAUAAAAOAAIABgAFAAIAAAAMAAEABgACAAcAAAANAAEABgADAAcAAAANAAIABgADAAgAAAANAAMABgADAAgAAAANAAQABgADAAgAAAANAAUABgADAAkAAAA=")
+tile_set = ExtResource("1_ptf86")
+
+[node name="Flag" type="Sprite2D" parent="."]
+position = Vector2(435.25, 86.75)
+scale = Vector2(1.02, 0.852)
+texture = ExtResource("2_xcdpw")
+
+[node name="Flag2" type="Sprite2D" parent="."]
+position = Vector2(403, 86)
+scale = Vector2(1.02, 0.852)
+texture = ExtResource("2_xcdpw")
+
+[node name="Player" parent="." instance=ExtResource("6_ptf86")]
+position = Vector2(135, 174)
+
+[node name="Kingpig" parent="." instance=ExtResource("2_ctpgp")]
+position = Vector2(238, 160)
+
+[node name="Door" parent="." instance=ExtResource("2_qaxay")]
+position = Vector2(25, 177)
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(238, 182)
+texture = ExtResource("4_jp048")
+
+[node name="Bar" type="Sprite2D" parent="."]
+position = Vector2(327, 153)
+scale = Vector2(0.943609, 0.7)
+texture = ExtResource("7_tp26b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(107, 84)
+texture = ExtResource("8_vk20h")

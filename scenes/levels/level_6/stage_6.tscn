@@ -26,12 +26,13 @@ position = Vector2(330, 246)
 
 [node name="DoorB" parent="." instance=ExtResource("3_pp1sl")]
 position = Vector2(4783, 151)
+target_stage = "uid://b8xtnlnaesycu"
 target_door = "DoorA"
 
 [node name="Bullets" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("5_2b2qq")]
-position = Vector2(347, 255)
+position = Vector2(4663, 146)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
