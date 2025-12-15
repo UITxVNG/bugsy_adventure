@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://unmmgyi4meoc" path="res://assets/tilesets/Forest Pass/PNG/Tlayer3.png" id="12_5xhko"]
 [ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://scenes/screens/game_screen/hud.tscn" id="12_8j4e5"]
 [ext_resource type="PackedScene" uid="uid://b85urmp6wy1fi" path="res://scenes/npcs/artifacts/artifact6.tscn" id="13_frv1d"]
+[ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://scenes/objects/door/door.tscn" id="13_frv1d"]
 
 [sub_resource type="Curve2D" id="Curve2D_2ljyo"]
 bake_interval = 349.51
@@ -122,6 +123,13 @@ texture = ExtResource("12_5xhko")
 
 [node name="Artifact1" parent="Collectibles" instance=ExtResource("13_frv1d")]
 position = Vector2(1499, 82)
+[node name="DoorB" parent="." instance=ExtResource("13_frv1d")]
+position = Vector2(461, 657)
+target_stage = "uid://duot2cm3iiwgf"
+target_door = "DoorA"
+
+[node name="DoorA" parent="." instance=ExtResource("13_frv1d")]
+position = Vector2(497, 465)
 
 [connection signal="enemy_defeated" from="Enemies/Starfish1" to="EnemyCounter" method="register_enemy_defeated"]
 [connection signal="enemy_defeated" from="Enemies/Starfish2" to="EnemyCounter" method="register_enemy_defeated"]
