@@ -56,6 +56,10 @@ var artifact_data: Dictionary = {
 	7: {"name": "Vảy Rồng Biển", "map": 9}
 }
 
+# Ending choice
+var final_choice_made: bool = false
+var refused_dark_voice: bool = false
+
 # =============================================================================
 # STORY FLAGS
 # =============================================================================
@@ -381,54 +385,33 @@ func collect_soul() -> void:
 # =============================================================================
 # ARTIFACT SYSTEM
 # =============================================================================
-func collect_artifact() -> void:
-	"""Thu thập artifact không chỉ định ID (backward compatibility)"""
-	artifacts_collected += 1
-	artifact_collected.emit(artifacts_collected)
-	_check_world_corruption()
-	print("Di vật thu thập: %d/%d" % [artifacts_collected, total_artifacts])
+var can_make_final_choice_var: bool = false
 
 func collect_artifact_with_id(artifact_id: int, artifact_name: String) -> void:
-	"""Thu thập artifact với ID cụ thể (recommended)"""
 	if artifact_id in collected_artifact_ids:
-		push_warning("Artifact ID %d đã được thu thập rồi!" % artifact_id)
 		return
-	
-	# Thêm vào danh sách
+
 	collected_artifact_ids.append(artifact_id)
-	
-	# Tăng số lượng
 	artifacts_collected += 1
-	artifact_collected.emit(artifacts_collected)
-	
-	# Log
-	print("✨ Đã thu thập: %s (ID: %d) - Tổng: %d/%d" % [artifact_name, artifact_id, artifacts_collected, total_artifacts])
-	
-	# Check world corruption
-	_check_world_corruption()
-	
-	# Trigger special events
-	_check_artifact_milestones(artifact_id)
+
+	can_make_final_choice_var = artifacts_collected >= 7
+
+	if Dialogic.VAR != null:
+		Dialogic.VAR.set_variable("artifacts_collected", artifacts_collected)
+		Dialogic.VAR.set_variable("can_make_final_choice", can_make_final_choice_var)
+	else:
+		push_warning("Dialogic.VAR lỗi")
+
+	print("Artifacts:", artifacts_collected)
+
+
+
 
 func get_collected_artifact_ids() -> Array[int]:
-	"""Trả về danh sách ID artifacts đã thu thập"""
 	return collected_artifact_ids
 
 func has_artifact(artifact_id: int) -> bool:
-	"""Kiểm tra đã có artifact này chưa"""
 	return artifact_id in collected_artifact_ids
-
-func _check_artifact_milestones(artifact_id: int) -> void:
-	"""Kiểm tra các mốc quan trọng khi thu thập artifact"""
-	match artifacts_collected:
-		1:
-			set_story_flag("first_artifact_collected", true)
-		3:
-			set_story_flag("world_corruption_started", true)
-		5:
-			set_story_flag("npcs_fear_player", true)
-		7:
-			set_story_flag("all_artifacts_collected", true)
 
 # =============================================================================
 # STORY FLAG SYSTEM
@@ -449,44 +432,37 @@ func get_story_flag(flag_name: String) -> bool:
 # =============================================================================
 # ENDING SYSTEM
 # =============================================================================
-func get_artifact_percentage() -> float:
-	return (float(artifacts_collected) / float(total_artifacts)) * 100.0
+func can_make_final_choice() -> bool:
+	"""Có đủ 7 artifacts để lựa chọn không?"""
+	return artifacts_collected >= 7
 
-func should_get_bad_ending() -> bool:
-	return get_artifact_percentage() >= 70.0 and story_flags.get("final_choice_made", false)
+func make_final_choice(refuse: bool) -> void:
+	"""Player đưa ra lựa chọn cuối cùng"""
+	final_choice_made = true
+	refused_dark_voice = refuse
+	print("Final choice: ", "REFUSE" if refuse else "ACCEPT")
 
-func should_get_good_ending() -> bool:
-	var percentage = get_artifact_percentage()
-	return percentage >= 30.0 and percentage < 70.0
+func calculate_final_ending() -> String:
+	if artifacts_collected < 7:
+		return "bad_ending"
 
-func should_get_secret_ending() -> bool:
-	return get_artifact_percentage() < 29.0
+	if not final_choice_made:
+		return "pending"
+
+	return "good_ending" if refused_dark_voice else "bad_ending"
 
 # =============================================================================
 # DIALOGIC INTEGRATION
 # =============================================================================
 func _on_dialogic_signal(argument: String) -> void:
 	match argument:
-		"collected_blade":
-			collected_blade()
-		"collected_hammer":
-			collected_hammer()
-		"collect_artifact":
-			collect_artifact()
-		"ignore_warning":
-			warnings_ignored += 1
-		"help_npc":
-			npcs_helped += 1
-		"reveal_truth":
-			set_story_flag("truth_discovered", true)
-		"dark_voice_appears":
-			set_story_flag("dark_voice_revealed", true)
-		"world_start_changing":
-			_trigger_world_decay_phase_1()
-		"world_corruption_complete":
-			_trigger_world_decay_phase_2()
-		_:
-			print("Dialogic signal không xác định: " + argument)
+		"refuse_dark_voice":
+			make_final_choice(true)
+		"accept_dark_voice":
+			make_final_choice(false)
+		"not_enough_artifacts":
+			final_choice_made = true
+			refused_dark_voice = false
 
 # =============================================================================
 # WORLD CORRUPTION SYSTEM
@@ -635,7 +611,7 @@ func print_debug_info() -> void:
 	print("  - Blade: ", "✓" if has_blade else "✗")
 	print("  - Hammer: ", "✓" if has_hammer else "✗")
 	print("\n🏺 ARTIFACTS")
-	print("  - Collected: %d/%d (%.1f%%)" % [artifacts_collected, total_artifacts, get_artifact_percentage()])
+	#print("  - Collected: %d/%d (%.1f%%)" % [artifacts_collected, total_artifacts, get_artifact_percentage()])
 	print("  - IDs: ", collected_artifact_ids)
 	print("\n🗺️ PROGRESS")
 	print("  - Current Map: ", current_map)

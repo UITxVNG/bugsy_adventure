@@ -19,7 +19,7 @@
 &"portraits": {
 "aggressive": {
 "export_overrides": {
-"image": "\"res://assets/sprites/foxy/foxy/fox_hat/fox_idle_1.png\""
+"image": "\"res://assets/artifact/npcs/Wraith_03_Moving Forward_000.png\""
 },
 "ignore_char_scale": false,
 "mirror": false,
@@ -29,7 +29,7 @@
 },
 "encouraging": {
 "export_overrides": {
-"image": "\"res://assets/sprites/foxy/foxy/fox_hat/fox_idle_1.png\""
+"image": "\"res://assets/artifact/npcs/Wraith_03_Casting Spells_012.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -38,9 +38,9 @@
 },
 "whisper": {
 "export_overrides": {
-"image": "\"res://assets/sprites/foxy/foxy/fox_hat/fox_idle_1.png\""
+"image": "\"res://assets/artifact/npcs/Wraith_03_Moving Forward_000.png\""
 },
-"mirror": true,
+"mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""

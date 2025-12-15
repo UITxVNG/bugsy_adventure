@@ -1,0 +1,17 @@
+foxy: Lõi Năng Lượng... nhưng ta... không đủ sức mạnh...
+foxy: Ta chỉ có {artifacts_collected} Di Vật...
+[wait time="1.0"]
+
+dark_voice: "Ngươi nghĩ ngươi có thể chống lại ta?"
+dark_voice: "Ngươi quá YẾU ĐUỐI! Không đủ để lựa chọn!"
+
+foxy: Không... ta phải... chống lại...
+[wait time="0.5"]
+
+dark_voice: "ĐẾN ĐÂY! NGAY BÂY GIỜ!"
+[signal name="not_enough_artifacts"]
+
+Narrator: Foxy không đủ sức mạnh...
+Narrator: Dark Voice chiếm lấy thân thể...
+
+leave

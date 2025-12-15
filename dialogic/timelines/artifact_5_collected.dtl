@@ -1,0 +1,14 @@
+join  center
+foxy: Di Vật thứ năm...
+[wait time="1.0"]
+foxy: Rừng... đang chết... Cây cối đang úa...
+dark_voice: "Cuối cùng! Sức mạnh đang trở về!"
+foxy: Giọng nói... Ngươi là ai?!
+dark_voice: "Ta là phần THẬT SỰ của ngươi!"
+[wait time="0.5"]
+Corrupted_Spirit: "Tại sao... Tại sao ngươi làm vậy..."
+foxy: Các ngươi... không phải quái vật...?
+Unknown_Spirit: "Chúng tôi là dân đảo... Bị nguyền rủa... Bởi NGƯƠI..."
+foxy: Không... Không thể nào...
+dark_voice: "Nhưng đã muộn! Còn 2 Di Vật nữa!"
+leave

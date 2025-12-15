@@ -1,12 +1,9 @@
-# dialog_trigger.gd
-# Script này có thể gắn vào NPC hoặc trigger area để kích hoạt hội thoại
-
 extends Area2D
 
 @export var timeline_name: String = ""
 @export var trigger_once: bool = true
-@export var auto_start: bool = false  # Tự động chạy khi vào vùng
-@export var require_interaction: bool = true  # Cần nhấn phím tương tác
+@export var auto_start: bool = false  
+@export var require_interaction: bool = true  
 
 var is_player_nearby: bool = false
 var has_triggered: bool = false

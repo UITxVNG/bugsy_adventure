@@ -1,0 +1,29 @@
+foxy: Lõi Năng Lượng Thiên Thể... ngay trước mắt ta.
+[wait time="1.0"]
+
+dark_voice: "LẤY NÓ! Hợp nhất với ta! Ta và ngươi sẽ BẤT KHẢ CHIẾN BẠI!"
+
+foxy: Ta đã thu thập đủ 7 Di Vật...
+foxy: Ta có đủ sức mạnh... để lựa chọn số phận của mình.
+[wait time="0.5"]
+
+[choice]
+
+- Từ chối Dark Voice
+	foxy: KHÔNG! TA TỪ CHỐI!
+	foxy: Ta sẽ không lặp lại sai lầm của kiếp trước!
+	foxy: Ta sẽ PHÁ HỦY ngươi!
+	[wait time="0.5"]
+	dark_voice: "NGƯƠI DÁM PHẢN BỘI TA?!"
+	[signal arg="refuse_dark_voice"]
+	Narrator: Foxy đã chọn con đường chuộc tội...
+
+- Chấp nhận Dark Voice
+	foxy: Ta... ta cần sức mạnh này!
+	foxy: Hãy hợp nhất với ta!
+	[wait time="0.5"]
+	dark_voice: "ĐÚNG VẬY! Chúng ta là MỘT!"
+	[signal]
+	Narrator: Foxy đã mất đi chính mình...
+
+leave

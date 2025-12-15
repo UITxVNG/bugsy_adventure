@@ -7,23 +7,23 @@
 "prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "dialogic_style",
+"style": "",
 "suffix": ""
 },
 &"default_portrait": "normal",
 &"description": "",
-&"display_name": "Crabbo",
+&"display_name": "Unknown_Spirit",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
 "normal": {
 "export_overrides": {
-"image": "\"res://assets/sprites/enemy/crab/crab_01.png\""
+"image": "\"res://assets/artifact/npcs/Wraith_02_Dying_003.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 0.8,
+"scale": 1,
 "scene": ""
 }
 },

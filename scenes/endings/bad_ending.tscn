@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwcj5vwu383gj"]
+
+[ext_resource type="Texture2D" uid="uid://cw1kurl2wp8rv" path="res://assets/sprites/island/background/bad_end.jpg" id="1_bchap"]
+[ext_resource type="Script" uid="uid://ry4qfxpkh6h2" path="res://scenes/endings/bad_ending.gd" id="1_on3uw"]
+
+[node name="BadEnding" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_on3uw")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(570, 357)
+scale = Vector2(1.13678, 1.21766)
+texture = ExtResource("1_bchap")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+self_modulate = Color(0.157558, 0.223189, 0.18582, 1)
+offset_left = 242.0
+offset_top = 162.0
+offset_right = 282.0
+offset_bottom = 200.0
+
+[node name="StoryLabel" type="Label" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="SkipHint" type="Label" parent="."]
+offset_left = 1051.0
+offset_top = -20.0
+offset_right = 1105.0
+offset_bottom = 3.0
+text = "Bỏ qua"
