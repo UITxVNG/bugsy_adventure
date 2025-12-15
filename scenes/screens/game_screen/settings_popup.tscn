@@ -93,27 +93,7 @@ scale = Vector2(2, 2)
 theme_override_icons/checked = ExtResource("4_43ojk")
 theme_override_icons/unchecked = ExtResource("5_ovj3y")
 
-[node name="ChooseLevelLabel" type="Label" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 142.0
-offset_right = 150.0
-offset_bottom = 165.0
-scale = Vector2(2, 2)
-text = "LEVELS"
-label_settings = SubResource("LabelSettings_rbs2k")
-
-[node name="ChooseLevelButton" type="Button" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 213.0
-offset_top = 122.0
-offset_right = 276.0
-offset_bottom = 153.0
-scale = Vector2(2, 2)
-text = "SELECT"
-
 [connection signal="gui_input" from="OverlayColorRect" to="." method="_on_overlay_color_rect_gui_input"]
 [connection signal="pressed" from="NinePatchRect/CloseTextureButton" to="." method="_on_close_texture_button_pressed"]
 [connection signal="toggled" from="NinePatchRect/MusicCheckButton" to="." method="_on_music_check_button_toggled"]
 [connection signal="toggled" from="NinePatchRect/SoundCheckButton" to="." method="_on_sound_check_button_toggled"]
-[connection signal="pressed" from="NinePatchRect/ChooseLevelButton" to="." method="_on_choose_level_button_pressed"]
