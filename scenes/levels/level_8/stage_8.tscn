@@ -18,12 +18,12 @@
 [ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://scenes/screens/game_screen/hud.tscn" id="16_rk06a"]
 [ext_resource type="PackedScene" uid="uid://delnx8nkpylcy" path="res://scenes/npcs/mush/mush.tscn" id="17_mush"]
 [ext_resource type="Script" uid="uid://dybrdnvtsiqri" path="res://dialogic/dialog_trigger.gd" id="18_dialog"]
-[ext_resource type="Script" uid="uid://dwcgb37wuctuh" path="res://scripts/danger_zone_trigger.gd" id="19_danger"]
+[ext_resource type="Script" uid="uid://d4joxiojgp0c5" path="res://scripts/danger_zone_trigger.gd" id="19_danger"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://scenes/objects/door/door.tscn" id="20_ie2vx"]
 
 [sub_resource type="Curve2D" id="Curve2D_6lbbw"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 123, 1, 0, 0, 0, 0, 125, 32, 0, 0, 0, 0, -1, 31, 0, 0, 0, 0, -1, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 141, 3, 0, 0, 0, 0, 139, 28, 0, 0, 0, 0, -1, 31, 0, 0, 0, 0, -1, 0)
 }
 point_count = 5
 
@@ -57,11 +57,11 @@ tile_set = ExtResource("1_1ku5t")
 position = Vector2(-381, 64)
 
 [node name="RotatingSaw" parent="." instance=ExtResource("4_6lbbw")]
-position = Vector2(275, -65)
+position = Vector2(303, -64)
 curve = SubResource("Curve2D_6lbbw")
 
 [node name="RotatingSaw2" parent="." instance=ExtResource("4_6lbbw")]
-position = Vector2(48, -896)
+position = Vector2(67, -929)
 curve = SubResource("Curve2D_i6sb0")
 
 [node name="TriggerPlatform" parent="." instance=ExtResource("4_e33h4")]

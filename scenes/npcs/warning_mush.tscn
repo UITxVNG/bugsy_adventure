@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://warning_mush_npc"]
+
+[ext_resource type="Script" path="res://scenes/npcs/simple_npc.gd" id="1_simple"]
+[ext_resource type="Texture2D" uid="uid://dghceeceb7yew" path="res://assets/sprites/enemy/mushroom/mushroom_01.png" id="2_mush1"]
+[ext_resource type="Texture2D" uid="uid://bgokwnch80xfi" path="res://assets/sprites/enemy/mushroom/mushroom_02.png" id="3_mush2"]
+[ext_resource type="Texture2D" uid="uid://d0lo1x14rp7ia" path="res://assets/sprites/enemy/mushroom/mushroom_03.png" id="4_mush3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mush"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mush1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mush2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mush3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WarningMushNPC" type="CharacterBody2D"]
+script = ExtResource("1_simple")
+timeline_name = "level8_warning"
+trigger_once = true
+interaction_range = 60.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mush")
+autoplay = "default"
+
+[node name="InteractionIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -40)
