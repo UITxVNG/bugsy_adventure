@@ -1,7 +1,7 @@
 extends MarginContainer
 @onready var grid_container = $TextureRect/GridContainer
 
-var current_max_level = 1
+var current_max_level = 10
 
 func _ready():
 	# Load saved progress from SaveSystem
