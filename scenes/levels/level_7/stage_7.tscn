@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=4 uid="uid://b8xtnlnaesycu"]
+[gd_scene load_steps=18 format=4 uid="uid://b8xtnlnaesycu"]
 
 [ext_resource type="TileSet" uid="uid://c8m8q0fe452q3" path="res://assets/tilesets/tile_set.tres" id="1_swvec"]
 [ext_resource type="PackedScene" uid="uid://cr06n1w1va6i8" path="res://scenes/player/player.tscn" id="2_uce0e"]
+[ext_resource type="PackedScene" uid="uid://dm03l7lbfeh6a" path="res://scenes/util/death_zone.tscn" id="3_5xhko"]
 [ext_resource type="PackedScene" uid="uid://0ynutkwlhlce" path="res://scenes/objects/platforms/path2d_moving_platform.tscn" id="3_uce0e"]
-[ext_resource type="Script" uid="uid://bvcdcbe8jn75p" path="res://scripts/enemy_counter.gd" id="4_counter"]
+[ext_resource type="Script" uid="uid://b2af84tmgye3a" path="res://scripts/enemy_counter.gd" id="4_counter"]
 [ext_resource type="PackedScene" uid="uid://cjgvg81b80ge4" path="res://scenes/enemies/starfish/starfish.tscn" id="5_starfish"]
 [ext_resource type="PackedScene" uid="uid://cbsa8w2lp8433" path="res://scenes/enemies/crab/crab.tscn" id="6_crab"]
 [ext_resource type="PackedScene" uid="uid://b8dad0e1f2g3h" path="res://scenes/objects/rotating_saw/rotating_saw.tscn" id="8_q8grv"]
@@ -12,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://drj2pgmb3p21p" path="res://assets/tilesets/Forest Pass/PNG/Tlayer2.png" id="11_frv1d"]
 [ext_resource type="Texture2D" uid="uid://unmmgyi4meoc" path="res://assets/tilesets/Forest Pass/PNG/Tlayer3.png" id="12_5xhko"]
 [ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://scenes/screens/game_screen/hud.tscn" id="12_8j4e5"]
-[ext_resource type="PackedScene" uid="uid://b85urmp6wy1fi" path="res://scenes/npcs/artifacts/artifact6.tscn" id="13_frv1d"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://scenes/objects/door/door.tscn" id="13_frv1d"]
 
 [sub_resource type="Curve2D" id="Curve2D_2ljyo"]
@@ -36,7 +36,7 @@ _data = {
 }
 point_count = 3
 
-[node name="Stage2" type="Node2D"]
+[node name="Stage" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-1, 0)
@@ -44,7 +44,10 @@ tile_map_data = PackedByteArray("AAAQAA8ABQACAAUAAAARAA8ABQACAAUAAAASAA8ABQACAAU
 tile_set = ExtResource("1_swvec")
 
 [node name="Player" parent="." instance=ExtResource("2_uce0e")]
-position = Vector2(524, 600)
+position = Vector2(500, 400)
+
+[node name="DeathZone" parent="Player" instance=ExtResource("3_5xhko")]
+position = Vector2(442, 670)
 
 [node name="Bullets" type="Node2D" parent="."]
 
@@ -123,6 +126,7 @@ texture = ExtResource("12_5xhko")
 
 [node name="Artifact1" parent="Collectibles" instance=ExtResource("13_frv1d")]
 position = Vector2(1499, 82)
+
 [node name="DoorB" parent="." instance=ExtResource("13_frv1d")]
 position = Vector2(461, 657)
 target_stage = "uid://duot2cm3iiwgf"
