@@ -17,8 +17,8 @@ func _ready() -> void:
 
 func _on_play_again_button_pressed() -> void:
 	get_tree().paused = false
-	# Reload current scene
-	get_tree().reload_current_scene()
+	# Respawn player at latest checkpoint
+	GameManager.player_died()
 
 
 func _on_level_select_button_pressed() -> void:
