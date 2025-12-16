@@ -92,7 +92,7 @@ func load_max_level() -> int:
 	var data = load_checkpoint_data()
 	if data.has("max_unlocked_level"):
 		return int(data["max_unlocked_level"])
-	return 1 # Default: only level 1 unlocked
+	return 10 # Default: only level 1 unlocked
 
 # Unlock next level (call this when player completes a level)
 func unlock_next_level(completed_level: int) -> void:
