@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://7sxdw87b6q0q"]
+[gd_scene load_steps=15 format=4 uid="uid://7sxdw87b6q0q"]
 
 [ext_resource type="PackedScene" uid="uid://bmf0ebquqnpf8" path="res://scenes/objects/platforms/manual_moving_platform.tscn" id="1_5r0re"]
 [ext_resource type="TileSet" uid="uid://c8m8q0fe452q3" path="res://assets/tilesets/tile_set.tres" id="1_wnbpc"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b5yvxmbo3o6i7" path="res://assets/tilesets/Forest Pass/PNG/Tlayer1.png" id="11_p06vl"]
 [ext_resource type="Texture2D" uid="uid://drj2pgmb3p21p" path="res://assets/tilesets/Forest Pass/PNG/Tlayer2.png" id="12_gqqhi"]
 [ext_resource type="Texture2D" uid="uid://unmmgyi4meoc" path="res://assets/tilesets/Forest Pass/PNG/Tlayer3.png" id="13_rdhyu"]
+[ext_resource type="AudioStream" uid="uid://cx0rp3iiyd8da" path="res://assets/audio/MAESTRO THEME.mp3" id="14_p06vl"]
 
 [node name="Stage" type="Node2D"]
 
@@ -94,3 +95,8 @@ position = Vector2(4429, 135)
 
 [node name="Artifact1" parent="Collectibles" instance=ExtResource("9_bguu6")]
 position = Vector2(4626, 144)
+
+[node name="MaestroTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_p06vl")
+autoplay = true
+parameters/looping = true

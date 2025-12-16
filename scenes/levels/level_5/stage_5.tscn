@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://0ia6xdfcwn7n"]
+[gd_scene load_steps=9 format=4 uid="uid://0ia6xdfcwn7n"]
 
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://scenes/objects/door/door.tscn" id="1_haiji"]
 [ext_resource type="PackedScene" uid="uid://bok3o4ruf7n8x" path="res://scenes/island/background/parallax_background.tscn" id="2_j2srt"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://scenes/screens/game_screen/hud.tscn" id="5_m65u5"]
 [ext_resource type="PackedScene" uid="uid://dm03l7lbfeh6a" path="res://scenes/util/death_zone.tscn" id="6_0plp4"]
 [ext_resource type="PackedScene" uid="uid://bc6jauyekindp" path="res://scenes/npcs/artifacts/artifact4.tscn" id="7_vlbkp"]
+[ext_resource type="AudioStream" uid="uid://do3oc4p7etv6k" path="res://assets/audio/Cinema Sins.mp3" id="8_y7fg3"]
 
 [node name="Stage" type="Node2D"]
 
@@ -40,3 +41,10 @@ position = Vector2(324, 461)
 
 [node name="Artifact1" parent="Collectibles" instance=ExtResource("7_vlbkp")]
 position = Vector2(2325, -121)
+
+[node name="CinemaSins" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_y7fg3")
+autoplay = true
+parameters/looping = true
+
+[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]

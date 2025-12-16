@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://do3oc4p7etv6k"
+path="res://.godot/imported/Cinema Sins.mp3-c99f9d9835db655f70864d032811b64d.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Cinema Sins.mp3"
+dest_files=["res://.godot/imported/Cinema Sins.mp3-c99f9d9835db655f70864d032811b64d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

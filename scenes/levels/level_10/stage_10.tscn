@@ -3,8 +3,8 @@
 [ext_resource type="TileSet" uid="uid://c8m8q0fe452q3" path="res://assets/tilesets/tile_set.tres" id="1_1phdy"]
 [ext_resource type="Script" uid="uid://dbspt7oyrgk4t" path="res://scenes/levels/level_10/stage_10.gd" id="1_3gv37"]
 [ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://scenes/screens/game_screen/hud.tscn" id="2_wec3i"]
-[ext_resource type="AudioStream" uid="uid://br5scfejs7wnq" path="res://assets/audio/music.mp3" id="3_5e0fo"]
 [ext_resource type="PackedScene" uid="uid://cr06n1w1va6i8" path="res://scenes/player/player.tscn" id="4_5eobn"]
+[ext_resource type="AudioStream" uid="uid://diqthimprljd3" path="res://assets/audio/BATTLE ACTION.mp3" id="4_snli7"]
 [ext_resource type="Texture2D" uid="uid://c2i3g6syaper3" path="res://assets/tilesets/Hiden Cave/Parallax Cave/1.png" id="5_un7i3"]
 [ext_resource type="PackedScene" uid="uid://ddc86ootpum2i" path="res://scenes/bosses/warlord_turtle/warlord_turtle.tscn" id="6_g2cvb"]
 [ext_resource type="PackedScene" uid="uid://0ynutkwlhlce" path="res://scenes/objects/platforms/path2d_moving_platform.tscn" id="7_un7i3"]
@@ -46,7 +46,7 @@ tile_set = ExtResource("1_1phdy")
 metadata/_edit_use_anchors_ = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_5e0fo")
+stream = ExtResource("4_snli7")
 autoplay = true
 parameters/looping = true
 

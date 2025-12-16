@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://fr0jpxxybedf"]
+[gd_scene load_steps=16 format=4 uid="uid://fr0jpxxybedf"]
 
 [ext_resource type="TileSet" uid="uid://c8m8q0fe452q3" path="res://assets/tilesets/tile_set.tres" id="1_33rtp"]
 [ext_resource type="PackedScene" uid="uid://cr06n1w1va6i8" path="res://scenes/player/player.tscn" id="2_dwsf3"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ed53lpghyr7j" path="res://dialogic/timelines/interact.tscn" id="10_t1ot5"]
 [ext_resource type="PackedScene" uid="uid://cu0cbkaor523u" path="res://scenes/npcs/artifacts/artifact.tscn" id="11_f47qk"]
 [ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://scenes/screens/game_screen/hud.tscn" id="12_mvtk4"]
+[ext_resource type="AudioStream" uid="uid://mp25158lopjw" path="res://assets/audio/Investigations.mp3" id="13_1vm6v"]
 
 [sub_resource type="Curve2D" id="Curve2D_5usqu"]
 _data = {
@@ -115,5 +116,10 @@ hint_text = "A/D : di chuyển"
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("12_mvtk4")]
 
+[node name="Investigations" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_1vm6v")
+autoplay = true
+parameters/looping = true
+
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@22992" to="TileMapLayer/@Area2D@22992" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@29881" to="TileMapLayer/@Area2D@29881" method="_on_body_entered"]
