@@ -27,3 +27,11 @@ func _on_overlay_color_rect_gui_input(event: InputEvent) -> void:
 
 func _on_close_texture_button_pressed() -> void:
 	hide_popup()
+
+func _on_choose_level_button_pressed() -> void:
+	# Load and show the level selection screen
+	var choose_level_scene = preload("res://scenes/levels/chose_level/chose_level.tscn")
+	var choose_level_instance = choose_level_scene.instantiate()
+	# Add to root so it renders on top
+	get_tree().root.add_child(choose_level_instance)
+	hide_popup()
