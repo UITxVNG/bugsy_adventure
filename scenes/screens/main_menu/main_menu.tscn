@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=3 uid="uid://mainmenu123"]
+
+[ext_resource type="Script" uid="uid://cqj04q80nbe22" path="res://scenes/screens/main_menu/main_menu.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cra63rsxymepx" path="res://assets/ui/main_screen/background1.png" id="2_g4j36"]
+[ext_resource type="Texture2D" uid="uid://byern5yn6ug2k" path="res://assets/ui/main_screen/player.png" id="3_foxy"]
+[ext_resource type="FontFile" uid="uid://bitum065glxbo" path="res://assets/fonts/big_font.fnt" id="4_font"]
+[ext_resource type="Texture2D" uid="uid://cqwuepjrlyvir" path="res://assets/ui/green_button.png" id="5_play"]
+[ext_resource type="Texture2D" uid="uid://dtaaj8iirm7jk" path="res://assets/ui/yellow_button.png" id="6_settings"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_g4j36")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Foxy" type="TextureRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -341.0
+offset_right = 1169.0
+offset_bottom = 345.0
+grow_vertical = 2
+texture = ExtResource("3_foxy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MenuContainer" type="VBoxContainer" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -200.0
+offset_right = -100.0
+offset_bottom = 200.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MenuContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 72
+text = "FOXY ADVENTURE"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="MenuContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="PlayButton" type="TextureButton" parent="MenuContainer"]
+custom_minimum_size = Vector2(300, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_play")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MenuContainer/PlayButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButton" type="TextureButton" parent="MenuContainer"]
+custom_minimum_size = Vector2(300, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_settings")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MenuContainer/SettingsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_font")
+theme_override_font_sizes/font_size = 40
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MenuContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

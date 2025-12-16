@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://7sxdw87b6q0q"]
+[gd_scene load_steps=10 format=4 uid="uid://7sxdw87b6q0q"]
 
 [ext_resource type="PackedScene" uid="uid://bmf0ebquqnpf8" path="res://scenes/objects/platforms/manual_moving_platform.tscn" id="1_5r0re"]
 [ext_resource type="TileSet" uid="uid://c8m8q0fe452q3" path="res://assets/tilesets/tile_set.tres" id="1_wnbpc"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cr06n1w1va6i8" path="res://scenes/player/player.tscn" id="5_2b2qq"]
 [ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://scenes/screens/game_screen/hud.tscn" id="6_2q7dr"]
 [ext_resource type="PackedScene" uid="uid://dm03l7lbfeh6a" path="res://scenes/util/death_zone.tscn" id="7_s5gxc"]
+[ext_resource type="PackedScene" uid="uid://dk3cjc74xm8k0" path="res://scenes/bosses/king_crab/king_crab.tscn" id="8_qdkbx"]
+[ext_resource type="PackedScene" uid="uid://cx5ahdmu71xmp" path="res://scenes/npcs/artifacts/artifact5.tscn" id="9_bguu6"]
 
 [node name="Stage" type="Node2D"]
 
@@ -40,3 +42,11 @@ position = Vector2(4663, 146)
 
 [node name="DeathZone" parent="." instance=ExtResource("7_s5gxc")]
 position = Vector2(2065, 901)
+
+[node name="KingCrab" parent="." instance=ExtResource("8_qdkbx")]
+position = Vector2(4429, 135)
+
+[node name="Collectibles" type="Node2D" parent="."]
+
+[node name="Artifact1" parent="Collectibles" instance=ExtResource("9_bguu6")]
+position = Vector2(4626, 144)

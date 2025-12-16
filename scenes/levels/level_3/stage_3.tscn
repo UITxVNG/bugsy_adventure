@@ -49,8 +49,7 @@ position = Vector2(108, 244)
 
 [node name="DoorB" parent="." instance=ExtResource("6_88qg8")]
 position = Vector2(1253, 242)
-target_stage = "uid://vmb0utbvftf6"
-target_door = "DoorA"
+target_stage = "uid://bq8tmitujr3bq"
 
 [node name="DoorA" parent="." instance=ExtResource("6_88qg8")]
 position = Vector2(97, 240)

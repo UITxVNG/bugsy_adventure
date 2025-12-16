@@ -11,4 +11,4 @@ Foxy: Và những cây cối... chúng trông... héo úa...
 Dark_Voice: "Đó chỉ là thử thách. Ngươi phải kiên trì."
 Foxy: ...Có lẽ vậy.
 [signal]
-leave  [animation="fade_out"]
+leave

@@ -9,7 +9,7 @@ size = Vector2(28, 25)
 [node name="Artifact1" type="Area2D"]
 position = Vector2(78, 20)
 script = ExtResource("1_4pkxt")
-artifact_id = 7
+artifact_id = 6
 artifact_name = "Vảy Rồng"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

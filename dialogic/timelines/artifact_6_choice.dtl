@@ -1,0 +1,36 @@
+[location: Treasure Chamber]
+join foxy center
+foxy: Hai chiếc rương...
+foxy: Một chứa Di Vật... Một chứa... Thuốc?
+[wait time="1.0"]
+join  center [animation="fade_in"]
+Unknown_Spirit: Xin ngươi... Con tôi đang hấp hối...
+Unknown_Spirit: Lấy thuốc... Xin ngươi... Ta van xin...
+[wait time="0.5"]
+dark_voice: "ĐẾ CHỦ SẢO! Lấy Di Vật đi!"
+dark_voice: "Chỉ còn 1 nữa thôi! ĐỪNG NGHE HẮN!"
+foxy: Ta... ta không biết...
+
+[choice]
+- Lấy Di Vật (Con đường Tham Lam)
+	foxy: Xin lỗi... Nhưng ta cần nó.
+	Unknown_Spirit: KHÔ---NG! CON TÔI!
+	Unknown_Spirit: Ngươi... ngươi là Con Quái Vật...
+	audio "res://sounds/child_dying.ogg"
+	dark_voice: "ĐÚNG VẬY! Ngươi đã chọn đúng!"
+	foxy: ...
+	[signal]
+	[signal]
+
+- Lấy Medicine (Con đường Chuộc Tội)
+	foxy: Không... Ta không thể tiếp tục như thế này!
+	[take_medicine]
+	Unknown_Spirit: Cảm ơn... Cảm ơn ngươi...
+	Unknown_Spirit: Có lẽ... ngươi vẫn còn một tia hy vọng...
+	dark_voice: "NGƯƠI NGU NGỐC! NGƯƠI CẦN SỨC MẠNH!"
+	foxy: Không... Ta không cần sức mạnh bằng cách giết người!
+	[signal]
+	[signal]
+
+leave 
+leave

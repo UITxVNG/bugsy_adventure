@@ -1,0 +1,23 @@
+[location: Memory Cavern]
+[sound path="res://sounds/memory_echo.ogg"]
+join foxy center
+foxy (trembling): Đây là... Di Vật cuối cùng...
+foxy: Ngay bên cạnh... nhật ký của ta...
+[wait time="1.5"]
+[show_diary_glow]
+Memory_Echo: "Nếu ta quay lại... Nếu ta cố lấy lại Lõi..."
+Memory_Echo: "Xin hãy... ngăn ta... Dù phải giết ta."
+[wait time="2.0"]
+dark_voice (commanding): "LẤY NÓ! HOÀN THÀNH SỨ MỆNH!"
+dark_voice: "Ngươi đã đi đến tận đây! ĐỪNG DỪI LẠI!"
+foxy (determined): KHÔNG!
+foxy: Ta đã thấy đủ rồi... Ta đã làm đủ tổn thương rồi...
+foxy: Ta... TỪ CHỐI!
+[artifact_push_away_animation]
+dark_voice (furious): "NGƯƠI DÁM?! TA SẼ TỰ LẤY!"
+[boss_battle_start]
+Narrator: Bản Ngã Tối Tăm hiện hình...
+Narrator: Trận chiến nội tâm cuối cùng bắt đầu...
+[signal emit="refuse_final_artifact"]
+[signal emit="start_inner_battle"]
+leave foxy [animation="fade_out"]

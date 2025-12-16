@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6jhnkobrh8t"]
+
+[ext_resource type="Texture2D" uid="uid://ccw2itux8or3i" path="res://assets/sprites/items/coin/heal.png" id="1_ftldx"]
+[ext_resource type="Script" uid="uid://bf7fllroukl2o" path="res://scenes/shop/hp.gd" id="1_script"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ioeg"]
+radius = 5.0
+height = 10.0
+
+[node name="Hp" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_script")
+metadata/_custom_type_script = "uid://nvuabioddqmj"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_ftldx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_2ioeg")
