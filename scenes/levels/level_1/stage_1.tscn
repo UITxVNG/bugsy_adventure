@@ -43,6 +43,7 @@ hint_text = "A/D để di chuyển"
 [node name="Jump" parent="." instance=ExtResource("3_dwsf3")]
 position = Vector2(183, -17)
 collision_mask = 2
+hint_text = "Space/W để nhảy"
 
 [node name="Attack" parent="." instance=ExtResource("3_dwsf3")]
 position = Vector2(753, -80)
@@ -122,4 +123,4 @@ autoplay = true
 parameters/looping = true
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@29881" to="TileMapLayer/@Area2D@29881" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@28747" to="TileMapLayer/@Area2D@28747" method="_on_body_entered"]
