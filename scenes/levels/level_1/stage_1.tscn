@@ -119,7 +119,8 @@ hint_text = "A/D : di chuyển"
 [node name="Investigations" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_1vm6v")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@29881" to="TileMapLayer/@Area2D@29881" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@23799" to="TileMapLayer/@Area2D@23799" method="_on_body_entered"]

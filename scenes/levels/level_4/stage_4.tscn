@@ -44,6 +44,7 @@ position = Vector2(100, 411)
 [node name="BrainTrust" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_gfh0x")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]

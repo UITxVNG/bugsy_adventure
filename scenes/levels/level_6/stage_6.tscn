@@ -99,4 +99,5 @@ position = Vector2(4626, 144)
 [node name="MaestroTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_p06vl")
 autoplay = true
+bus = &"Music"
 parameters/looping = true

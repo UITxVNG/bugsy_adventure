@@ -60,7 +60,8 @@ position = Vector2(40, 424)
 [node name="FluffingADuck" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_voip7")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@29424" to="TileMapLayer/@Area2D@29424" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@24123" to="TileMapLayer/@Area2D@24123" method="_on_body_entered"]

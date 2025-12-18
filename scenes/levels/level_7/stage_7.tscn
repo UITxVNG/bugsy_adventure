@@ -139,6 +139,7 @@ position = Vector2(497, 465)
 [node name="ToTheGate" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_ywc6m")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [connection signal="enemy_defeated" from="Enemies/Starfish1" to="EnemyCounter" method="register_enemy_defeated"]
