@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=4 uid="uid://7sxdw87b6q0q"]
+[gd_scene load_steps=16 format=4 uid="uid://7sxdw87b6q0q"]
 
 [ext_resource type="PackedScene" uid="uid://bmf0ebquqnpf8" path="res://scenes/objects/platforms/manual_moving_platform.tscn" id="1_5r0re"]
+[ext_resource type="Script" uid="uid://dwnnpxfrusskc" path="res://scenes/levels/level_6/stage_6.gd" id="1_gqqhi"]
 [ext_resource type="TileSet" uid="uid://c8m8q0fe452q3" path="res://assets/tilesets/tile_set.tres" id="1_wnbpc"]
 [ext_resource type="PackedScene" uid="uid://bqo1b46hrr23f" path="res://scenes/objects/platforms/change_state_platform.tscn" id="2_08xht"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://scenes/objects/door/door.tscn" id="3_pp1sl"]
@@ -16,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://cx0rp3iiyd8da" path="res://assets/audio/MAESTRO THEME.mp3" id="14_p06vl"]
 
 [node name="Stage" type="Node2D"]
+script = ExtResource("1_gqqhi")
 
 [node name="ManualMovingPlatform" parent="." instance=ExtResource("1_5r0re")]
 position = Vector2(4578, 121)
@@ -79,7 +81,7 @@ target_door = "DoorA"
 [node name="Bullets" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("5_2b2qq")]
-position = Vector2(384, 211)
+position = Vector2(4746, 160)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
