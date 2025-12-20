@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b8xtnlnaesycu"]
+[gd_scene load_steps=19 format=4 uid="uid://b8xtnlnaesycu"]
 
 [ext_resource type="TileSet" uid="uid://c8m8q0fe452q3" path="res://assets/tilesets/tile_set.tres" id="1_swvec"]
 [ext_resource type="PackedScene" uid="uid://cr06n1w1va6i8" path="res://scenes/player/player.tscn" id="2_uce0e"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://unmmgyi4meoc" path="res://assets/tilesets/Forest Pass/PNG/Tlayer3.png" id="12_5xhko"]
 [ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://scenes/screens/game_screen/hud.tscn" id="12_8j4e5"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://scenes/objects/door/door.tscn" id="13_frv1d"]
+[ext_resource type="AudioStream" uid="uid://bt2dx35xbqihj" path="res://assets/audio/To The Gate.mp3" id="15_ywc6m"]
 
 [sub_resource type="Curve2D" id="Curve2D_2ljyo"]
 bake_interval = 349.51
@@ -134,6 +135,12 @@ target_door = "DoorA"
 
 [node name="DoorA" parent="." instance=ExtResource("13_frv1d")]
 position = Vector2(497, 465)
+
+[node name="ToTheGate" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_ywc6m")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="enemy_defeated" from="Enemies/Starfish1" to="EnemyCounter" method="register_enemy_defeated"]
 [connection signal="enemy_defeated" from="Enemies/Starfish2" to="EnemyCounter" method="register_enemy_defeated"]

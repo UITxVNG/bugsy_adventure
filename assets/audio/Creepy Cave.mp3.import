@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmfai6sekan47"
+path="res://.godot/imported/Creepy Cave.mp3-22db642285e635b3077c2442816fdb5e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Creepy Cave.mp3"
+dest_files=["res://.godot/imported/Creepy Cave.mp3-22db642285e635b3077c2442816fdb5e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

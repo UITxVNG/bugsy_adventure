@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://duot2cm3iiwgf"]
+[gd_scene load_steps=27 format=4 uid="uid://duot2cm3iiwgf"]
 
 [ext_resource type="TileSet" uid="uid://c8m8q0fe452q3" path="res://assets/tilesets/tile_set.tres" id="1_1ku5t"]
 [ext_resource type="PackedScene" uid="uid://cr06n1w1va6i8" path="res://scenes/player/player.tscn" id="3_6lbbw"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://dybrdnvtsiqri" path="res://dialogic/dialog_trigger.gd" id="18_dialog"]
 [ext_resource type="Script" uid="uid://d4joxiojgp0c5" path="res://scripts/danger_zone_trigger.gd" id="19_danger"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://scenes/objects/door/door.tscn" id="20_ie2vx"]
+[ext_resource type="AudioStream" uid="uid://bgu2s48eem2w6" path="res://assets/audio/Caribbean.mp3" id="21_osdfp"]
 
 [sub_resource type="Curve2D" id="Curve2D_6lbbw"]
 _data = {
@@ -46,7 +47,7 @@ height = 60.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_danger"]
 size = Vector2(100, 200)
 
-[node name="Stage2" type="Node2D"]
+[node name="Stage" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(66, 0)
@@ -177,3 +178,9 @@ target_door = "DoorA"
 
 [node name="DoorA" parent="." instance=ExtResource("20_ie2vx")]
 position = Vector2(-466, 49)
+
+[node name="Caribbean" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_osdfp")
+autoplay = true
+bus = &"Music"
+parameters/looping = true

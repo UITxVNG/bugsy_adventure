@@ -2,7 +2,6 @@
 
 [ext_resource type="TileSet" uid="uid://c8m8q0fe452q3" path="res://assets/tilesets/tile_set.tres" id="1_tu08v"]
 [ext_resource type="PackedScene" uid="uid://cr06n1w1va6i8" path="res://scenes/player/player.tscn" id="2_vaigi"]
-[ext_resource type="PackedScene" uid="uid://qr7er0buuelk" path="res://scenes/island/background/music.tscn" id="4_d4lxl"]
 [ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://scenes/screens/game_screen/hud.tscn" id="5_l2kue"]
 [ext_resource type="Texture2D" uid="uid://b68xwnbgji3k7" path="res://assets/tilesets/Mossy Tileset/Gradient_layer.png" id="5_tu08v"]
 [ext_resource type="Texture2D" uid="uid://b72mry1aismrx" path="res://assets/tilesets/Mossy Tileset/BackgroundDecoration/BackgroundDecoration_1.png" id="6_3tlm8"]
@@ -38,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://3d7x7eigwmi0" path="res://assets/tilesets/Mossy Tileset/HangingPlants/HangingPlant_4.png" id="35_1hn5l"]
 [ext_resource type="Texture2D" uid="uid://c8tgfpnydyn1j" path="res://assets/tilesets/Mossy Tileset/HangingPlants/HangingPlant_3.png" id="36_5i172"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://scenes/objects/door/door.tscn" id="38_5i172"]
+[ext_resource type="AudioStream" uid="uid://dmfai6sekan47" path="res://assets/audio/Creepy Cave.mp3" id="38_s00a2"]
 
 [sub_resource type="Curve2D" id="Curve2D_1of5l"]
 _data = {
@@ -55,8 +55,6 @@ tile_set = ExtResource("1_tu08v")
 position = Vector2(245, 212)
 
 [node name="Bullets" type="Node2D" parent="."]
-
-[node name="Music" parent="." instance=ExtResource("4_d4lxl")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -256,5 +254,11 @@ position = Vector2(233, 215)
 position = Vector2(2775, 52)
 target_stage = "uid://dyccryoddg5e6"
 target_door = "DoorA"
+
+[node name="CreepyCave" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_s00a2")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
