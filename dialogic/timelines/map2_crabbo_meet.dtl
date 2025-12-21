@@ -1,6 +1,5 @@
-join Crabbo right [animation="slide_in_right"]
+join Crabbo center
 Crabbo: Ê! Con cáo kiaaaa! Nhìn ngươi quen mắt quá!
-join  center
 foxy: Một con cua? Ta quen ngươi à?
 Crabbo: Không phải ngươi là người muốn đi tìm "mảnh pha lê" hả? Ta đâu có nhớ nhầm.
 Crabbo: Ta vẫn còn trẻ lắm, không hề lú lẫn nhe.
@@ -9,14 +8,18 @@ dark_voice: "Giết chúng... Lấy sức mạnh..."
 Crabbo: Hả??? Ta... ta có từng nói sao?
 foxy: //Mình thậm chí còn không biết cậu ta là ai... ký ức của mình... giọng nói kia...
 Crabbo: Này... ngươi có vẻ lạ thế? Thực sự không nhớ Crabbo à?
-Crabbo: Crabbo cảm giác mọi chuyện, sinh vật, hòn đảo ngày càng lạ...
-Crabbo: Mọi thứ sẽ thay đổi, và chẳng thể cứu vãn
-foxy: Thay đổi? Ý ngươi là sao? Ngươi đang nói gì vậy
+foxy: Lạ? Ý ngươi là sao? Ngươi đang nói gì vậy
 foxy: Không... Có lẽ chỉ là Crabbo suy nghĩ nhiều thôi. Ngươi đang đi đâu vậy?
 foxy: Ta muốn đi tìm... chính mình? Mush nói ta sẽ tìm được câu trả lời qua Di vật... nên ta muốn tìm hết chúng nó.
 Crabbo: A! Cây nấm đó nói vậy sao. Vậy thì chúc ngươi may mắn, có thể ngươi sẽ tìm được nó ở đâu đó phía sâu bên trong hòn đảo.
 Crabbo: Nhưng mà ta chưa từng thấy ai đặt chân vào đó mà có thể trở lại...
-foxy: Không sao, ta có cảm giác mình sẽ làm được! Tạm biệt cua nhỏ, hẹn gặp lại!
+foxy: Không sao, ta có cảm giác mình sẽ làm được!
+Crabbo: Crabbo nghe nói ở bãi bên kia bờ biển có một viên đá bị phong ấn
+Crabbo: Mush từng nói phải đủ sự thông minh để có thể giải mã nó!
+foxy (confused): Vậy sao? Ngươi còn biết gì nữa không?
+Crabbo: Có! Có chứ! Lửa, Nước, Đất và cái gì ta???
+Crabbo: Trái cây, hay cây cối gì đó. Đem nhũng hòn đá đại diện nguyên tố đó để đúng chỗ.
+Crabbo: Foxy biết đồng hồ mà nhỉ, nó đó, theo chiều đấy, trái qua phảii. Crabbo nhớ vậy
+foxy (determined): Vậy sao... Cảm ơn Crabbo!!! Ta sẽ thành công và trở lại!
 
-leave Crabbo [animation="fade_out"]
 leave

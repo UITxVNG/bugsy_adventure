@@ -168,7 +168,7 @@ func _open_door() -> void:
 func show_hint() -> void:
 	if hint_label and not is_solved:
 		hint_label.visible = true
-		hint_label.text = "Sắp xếp theo thứ tự: 🔥 → 💧 → 🌍 → 💨"
+
 
 func hide_hint() -> void:
 	if hint_label:

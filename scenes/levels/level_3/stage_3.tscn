@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://sws2l0sfegan" path="res://scenes/objects/platforms/animatable_body_2d.gd" id="14_8pbnw"]
 [ext_resource type="Texture2D" uid="uid://dh6liccdc3qhx" path="res://assets/artifact/Icons_35.png" id="14_icusv"]
 [ext_resource type="PackedScene" uid="uid://djx0x13gilb6n" path="res://scenes/npcs/artifacts/artifact3.tscn" id="15_e7ucg"]
-[ext_resource type="PackedScene" uid="uid://ed53lpghyr7j" path="res://dialogic/timelines/interact.tscn" id="16_jm84n"]
+[ext_resource type="PackedScene" uid="uid://cwphrd5t63ruw" path="res://scenes/levels/level_3/hint_ques.tscn" id="17_jm84n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66rft"]
 size = Vector2(17.25, 16.8125)
@@ -182,13 +182,13 @@ texture = ExtResource("14_icusv")
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_e7ucg")
 
-[node name="Interact" parent="PuzzleArea/PuzzleDoor" instance=ExtResource("16_jm84n")]
-position = Vector2(8, -34)
-hint_text = "Nhìn có vẻ kì lạ, thử sắp xếp các biểu tưởng lại xem..."
-
 [node name="Collectibles" type="Node2D" parent="."]
 
 [node name="Artifact3" parent="Collectibles" instance=ExtResource("15_e7ucg")]
 process_mode = 4
 visible = false
 position = Vector2(543, -116)
+
+[node name="HintQues" parent="." instance=ExtResource("17_jm84n")]
+position = Vector2(610, -131)
+hint_text = "Dùng chuột để di chuyển các đá nguyên tố, hãy nhớ lại lời Crabbo nào"

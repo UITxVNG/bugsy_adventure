@@ -13,12 +13,13 @@ script = ExtResource("1_on3uw")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(570, 357)
-scale = Vector2(1.13678, 1.21766)
+position = Vector2(559, 327)
+scale = Vector2(1.26831, 1.12141)
 texture = ExtResource("1_bchap")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 self_modulate = Color(0.157558, 0.223189, 0.18582, 1)
+layout_mode = 0
 offset_left = 242.0
 offset_top = 162.0
 offset_right = 282.0
@@ -28,8 +29,10 @@ offset_bottom = 200.0
 layout_mode = 2
 
 [node name="SkipHint" type="Label" parent="."]
-offset_left = 1051.0
-offset_top = -20.0
-offset_right = 1105.0
-offset_bottom = 3.0
-text = "Bỏ qua"
+layout_mode = 0
+offset_left = 1034.0
+offset_top = 46.0
+offset_right = 1094.0
+offset_bottom = 69.0
+text = "ESC để bỏ qua
+"

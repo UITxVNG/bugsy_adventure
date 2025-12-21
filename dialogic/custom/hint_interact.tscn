@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2yhu8r3xrnyw"]
+
+[ext_resource type="Texture2D" uid="uid://dtaaj8iirm7jk" path="res://assets/ui/yellow_button.png" id="1_fuf0c"]
+[ext_resource type="Script" uid="uid://ctbk21gs1stkc" path="res://dialogic/custom/hint_interact.gd" id="1_u062a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u062a"]
+size = Vector2(75.5, 61)
+
+[node name="HintInteract" type="Area2D"]
+collision_layer = 136
+collision_mask = 3
+script = ExtResource("1_u062a")
+hint_text = "F"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 8)
+shape = SubResource("RectangleShape2D_u062a")
+
+[node name="TextPanel" type="PanelContainer" parent="."]
+offset_left = -16.0
+offset_top = -44.0
+offset_right = 14.0
+offset_bottom = -16.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="TextPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="TextPanel/Label"]
+show_behind_parent = true
+position = Vector2(15, 13)
+scale = Vector2(0.259838, 1.06851)
+texture = ExtResource("1_fuf0c")
