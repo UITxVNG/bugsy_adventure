@@ -30,16 +30,21 @@ func _on_body_exited(body):
 func show_hint():
 	text_panel.visible = true
 	text_panel.modulate.a = 0
+	text_panel.scale = Vector2(0.9, 0.9)
 	if tween:
 		tween.kill()
-	tween = create_tween()
+	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	tween.set_parallel(true)
 	tween.tween_property(text_panel, \"modulate:a\", 1.0, show_duration)
+	tween.tween_property(text_panel, \"scale\", Vector2(1.0, 1.0), show_duration)
 
 func hide_hint():
 	if tween:
 		tween.kill()
-	tween = create_tween()
+	tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
+	tween.set_parallel(true)
 	tween.tween_property(text_panel, \"modulate:a\", 0.0, show_duration)
+	tween.tween_property(text_panel, \"scale\", Vector2(0.9, 0.9), show_duration)
 	await tween.finished
 	text_panel.visible = false
 "
@@ -60,15 +65,20 @@ texture = ExtResource("1_sign")
 shape = SubResource("RectangleShape2D_1ugvg")
 
 [node name="TextPanel" type="PanelContainer" parent="."]
-offset_left = -150.0
-offset_top = -150.0
-offset_right = 150.0
-offset_bottom = -90.0
+offset_left = -120.0
+offset_top = -100.0
+offset_right = 120.0
+offset_bottom = -40.0
+pivot_offset = Vector2(120, 30)
 mouse_filter = 2
+theme_override_styles/panel = null
 
 [node name="Label" type="Label" parent="TextPanel"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 22
 text = "Hint text"
 horizontal_alignment = 1
 vertical_alignment = 1

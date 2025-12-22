@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnj077mr8k0u3"]
+[gd_scene load_steps=12 format=3 uid="uid://dnj077mr8k0u3"]
 
 [ext_resource type="Script" uid="uid://nfyg7543h5xq" path="res://scenes/enemies/mushroom/mushroom.gd" id="1_wvybr"]
 [ext_resource type="Texture2D" uid="uid://c5pag27kjpt7h" path="res://assets/sprites/enemy/mushroom/mushroom_hit_01.png" id="2_ysheg"]
@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bgokwnch80xfi" path="res://assets/sprites/enemy/mushroom/mushroom_02.png" id="6_3dip8"]
 [ext_resource type="Texture2D" uid="uid://d0lo1x14rp7ia" path="res://assets/sprites/enemy/mushroom/mushroom_03.png" id="7_io5uk"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ejere"]
-radius = 13.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysheg"]
+size = Vector2(22, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v8rrl"]
 animations = [{
@@ -43,16 +43,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_push"]
+size = Vector2(32, 32)
+
 [node name="Mushroom" type="CharacterBody2D"]
 position = Vector2(2, -7)
 collision_layer = 8
-collision_mask = 3
 script = ExtResource("1_wvybr")
 metadata/_edit_vertical_guides_ = [-65.0]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_ejere")
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_ysheg")
 
 [node name="Direction" type="Node2D" parent="."]
 
@@ -73,3 +75,13 @@ target_position = Vector2(0, 24)
 
 [node name="Run" type="Node" parent="States"]
 script = ExtResource("5_n2fa0")
+
+[node name="PushArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_push")
+
+[connection signal="body_entered" from="PushArea" to="." method="_on_push_area_body_entered"]
