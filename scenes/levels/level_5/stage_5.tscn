@@ -45,6 +45,7 @@ position = Vector2(2325, -121)
 [node name="CinemaSins" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_y7fg3")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]

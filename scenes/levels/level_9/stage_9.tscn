@@ -258,6 +258,7 @@ target_door = "DoorA"
 [node name="CreepyCave" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("38_s00a2")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]

@@ -182,4 +182,5 @@ position = Vector2(-466, 49)
 [node name="Caribbean" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_osdfp")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
