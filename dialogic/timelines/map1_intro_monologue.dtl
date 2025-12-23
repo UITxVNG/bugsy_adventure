@@ -1,5 +1,5 @@
-join foxy (normal) center [animation="fade_in"]
-foxy (normal): Đầu mình... đau quá...
+join foxy center
+foxy: Đầu mình... đau quá...
 [voice path="res://dialogic/sounds/foxy/hurt.wav" volume="-10.0"]
 foxy (confused): Nơi đây... là đâu?
 [wait time="1.0"]

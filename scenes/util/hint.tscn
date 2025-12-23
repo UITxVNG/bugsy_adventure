@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b32kumq6nodgw"]
+[gd_scene load_steps=5 format=3 uid="uid://b32kumq6nodgw"]
 
 [ext_resource type="Texture2D" uid="uid://de4b4lul5bc8y" path="res://assets/sprites/sign/sign.png" id="1_sign"]
+[ext_resource type="Texture2D" uid="uid://dtaaj8iirm7jk" path="res://assets/ui/yellow_button.png" id="2_17vyw"]
 
 [sub_resource type="GDScript" id="GDScript_1ugvg"]
 script/source = "extends Area2D
@@ -30,16 +31,21 @@ func _on_body_exited(body):
 func show_hint():
 	text_panel.visible = true
 	text_panel.modulate.a = 0
+	text_panel.scale = Vector2(0.9, 0.9)
 	if tween:
 		tween.kill()
-	tween = create_tween()
+	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	tween.set_parallel(true)
 	tween.tween_property(text_panel, \"modulate:a\", 1.0, show_duration)
+	tween.tween_property(text_panel, \"scale\", Vector2(1.0, 1.0), show_duration)
 
 func hide_hint():
 	if tween:
 		tween.kill()
-	tween = create_tween()
+	tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
+	tween.set_parallel(true)
 	tween.tween_property(text_panel, \"modulate:a\", 0.0, show_duration)
+	tween.tween_property(text_panel, \"scale\", Vector2(0.9, 0.9), show_duration)
 	await tween.finished
 	text_panel.visible = false
 "
@@ -48,6 +54,7 @@ func hide_hint():
 size = Vector2(100, 120)
 
 [node name="Hint" type="Area2D"]
+position = Vector2(2, 0)
 collision_layer = 136
 collision_mask = 3
 script = SubResource("GDScript_1ugvg")
@@ -60,16 +67,24 @@ texture = ExtResource("1_sign")
 shape = SubResource("RectangleShape2D_1ugvg")
 
 [node name="TextPanel" type="PanelContainer" parent="."]
-offset_left = -150.0
-offset_top = -150.0
-offset_right = 150.0
-offset_bottom = -90.0
+offset_left = -155.0
+offset_top = -80.0
+offset_right = 166.0
+offset_bottom = -43.0
 mouse_filter = 2
+theme_override_styles/panel = null
 
 [node name="Label" type="Label" parent="TextPanel"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Hint text"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="TextPanel/Label"]
+show_behind_parent = true
+position = Vector2(160, 19)
+scale = Vector2(2.96759, 2.08654)
+texture = ExtResource("2_17vyw")

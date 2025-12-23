@@ -4,4 +4,4 @@ dark_voice: "Tốt lắm! Tiếp tục như vậy!"
 dark_voice: "Ngươi sinh ra để làm điều này..."
 foxy: Nhưng... sao ta thấy hơi lạnh...?
 dark_voice: "Đó chỉ là ảo giác! Tiến lên!"
-leave  [animation="fade_out"]
+leave

@@ -1,7 +1,6 @@
-join mush center [animation="bounce_in"]
+join mush center
 [voice path="res://dialogic/sounds/mush/greeting_2_meghan.wav" volume="-10.0"]
 mush (friendly): Ồ! Lại một vị khách lạ! Chào mừng đến Aetheria, lữ khách!
-join foxy (normal) center
 foxy: Ngươi... ngươi có thể giúp ta không?
 mush: Ta là Mush, học giả của hòn đảo này. Ngươi trông có vẻ... lạc lõng.
 foxy: Ta không nhớ gì cả. Chỉ biết có thứ gì đó đang gọi ta ở đây.

@@ -13,6 +13,7 @@ var orb_angle: float = 0.0
 var orb_distance: float = 180.0
 var orb_rotate_speed: float = 3.0
 var saved_sprite_before_ultra: AnimatedSprite2D = null
+var is_transforming := false
 
 @export var has_blade: bool = false
 @export var has_hammer: bool = false
@@ -284,7 +285,7 @@ func summon_hammer():
 # INPUT
 # ============================================================
 func _unhandled_input(event: InputEvent) -> void:
-	if is_dead:
+	if is_dead or is_transforming:
 		return  # CHẶN TOÀN BỘ INP
 	if event.is_action_pressed("jump"):
 		if jump_count < max_jumps:
@@ -338,6 +339,8 @@ func use_mana_potion():
 
 
 func _input(event):
+	if is_transforming:
+		return
 	if event.is_action_pressed("teleport"):
 		if orb_exists:
 			if spend_mana(20):
@@ -364,6 +367,7 @@ func _start_ultra_form():
 		return
 
 	is_ultra = true
+	is_transforming = true
 	saved_sprite_before_ultra = animated_sprite
 	print("The sprite saved", saved_sprite_before_ultra)
 	movement_speed = base_speed * 1.5
@@ -378,7 +382,7 @@ func _start_ultra_form():
 	# Đổi sang sprite Ultra
 	set_animated_sprite($Direction/UltraFoxAnimatedSprite2D)
 	change_animation("idle")
-
+	is_transforming = false 
 	print("ULTRA MODE ON")
 func _end_ultra_form():
 	is_ultra = false
