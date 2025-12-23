@@ -1,9 +1,8 @@
-[location: Treasure Chamber]
 join foxy center
+
 foxy: Hai chiếc rương...
 foxy: Một chứa Di Vật... Một chứa... Thuốc?
 [wait time="1.0"]
-join  center [animation="fade_in"]
 Unknown_Spirit: Xin ngươi... Con tôi đang hấp hối...
 Unknown_Spirit: Lấy thuốc... Xin ngươi... Ta van xin...
 [wait time="0.5"]

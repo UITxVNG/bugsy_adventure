@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmka416h6f5pu"]
+[gd_scene load_steps=4 format=3 uid="uid://dmka416h6f5pu"]
 
 [ext_resource type="Texture2D" uid="uid://b8iefgkj22lls" path="res://assets/sprites/island/background/good_end.jpg" id="1_dv3u5"]
 [ext_resource type="Script" uid="uid://cql5kytbsh5fe" path="res://scenes/endings/good_ending.gd" id="1_gf2da"]
+[ext_resource type="Texture2D" uid="uid://ck5bsxum1e0n3" path="res://assets/sprites/island/background/b_good.png" id="3_xqf6i"]
 
 [node name="Stage" type="Control"]
 layout_mode = 3
@@ -13,25 +14,31 @@ script = ExtResource("1_gf2da")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(570.984, 319.542)
-scale = Vector2(1.1348, 1.23121)
+position = Vector2(566, 343)
+scale = Vector2(1.23291, 1.14182)
 texture = ExtResource("1_dv3u5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer/Sprite2D"]
+show_behind_parent = true
+position = Vector2(59.4139, -31.5879)
+scale = Vector2(1.32708, 1.39149)
+texture = ExtResource("3_xqf6i")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 self_modulate = Color(0.157558, 0.223189, 0.18582, 1)
 layout_mode = 0
-offset_left = 242.0
-offset_top = 162.0
-offset_right = 282.0
-offset_bottom = 200.0
+offset_left = 315.0
+offset_top = 126.0
+offset_right = 355.0
+offset_bottom = 164.0
 
 [node name="StoryLabel" type="Label" parent="CenterContainer"]
 layout_mode = 2
 
 [node name="SkipHint" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1051.0
-offset_top = -20.0
-offset_right = 1105.0
-offset_bottom = 3.0
-text = "Bỏ qua"
+offset_left = 1001.0
+offset_top = 28.0
+offset_right = 1055.0
+offset_bottom = 51.0
+text = "ESC để bỏ qua"

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameManager="*res://scripts/autoload/game_manager.gd"
 SaveSystem="*res://scripts/autoload/save_system.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GlobalData="*res://dialogic/global_data.gd"
 
 [dialogic]
 

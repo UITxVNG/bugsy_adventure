@@ -9,9 +9,7 @@ var _dbg_frame_counter: int = 0
 func _ready():
 	sync_to_physics = true
 
-	# Resolve a NodePath assignment from the scene to the actual node (use get() to avoid static typing issues)
 	var raw_pf = null
-	# try to read the exported property raw value
 	if has_method("get"):
 		raw_pf = get("path_follow")
 	# If the scene set a NodePath, resolve it
@@ -19,8 +17,8 @@ func _ready():
 		var resolved = get_node(raw_pf)
 		if resolved:
 			path_follow = resolved
+			queue_free()
 
-	# If still null, try parent (common setup: AnimatableBody2D is child of PathFollow2D)
 	if path_follow == null:
 		var p = get_parent()
 		if p and p is PathFollow2D:

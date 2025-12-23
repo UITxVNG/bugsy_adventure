@@ -1,5 +1,4 @@
-[location: Memory Cavern]
-[sound path="res://sounds/memory_echo.ogg"]
+audio "res://sounds/memory_echo.ogg"
 join foxy center
 foxy (trembling): Đây là... Di Vật cuối cùng...
 foxy: Ngay bên cạnh... nhật ký của ta...
@@ -18,6 +17,6 @@ dark_voice (furious): "NGƯƠI DÁM?! TA SẼ TỰ LẤY!"
 [boss_battle_start]
 Narrator: Bản Ngã Tối Tăm hiện hình...
 Narrator: Trận chiến nội tâm cuối cùng bắt đầu...
-[signal emit="refuse_final_artifact"]
-[signal emit="start_inner_battle"]
+[signal]
+[signal]
 leave foxy [animation="fade_out"]
