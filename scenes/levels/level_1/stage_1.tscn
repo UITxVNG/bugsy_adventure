@@ -32,28 +32,8 @@ tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAA
 tile_set = ExtResource("1_33rtp")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_dwsf3")]
-position = Vector2(-323, -15)
+position = Vector2(-319, -1)
 collision_layer = 2
-
-[node name="Movement" parent="." instance=ExtResource("3_dwsf3")]
-visible = false
-position = Vector2(-201, -16)
-collision_mask = 2
-hint_text = "A/D để di chuyển"
-
-[node name="Jump" parent="." instance=ExtResource("3_dwsf3")]
-position = Vector2(183, -17)
-collision_mask = 2
-
-[node name="Attack" parent="." instance=ExtResource("3_dwsf3")]
-position = Vector2(753, -80)
-collision_mask = 2
-hint_text = "Nhấn C để tấn công"
-
-[node name="Check_Point" parent="." instance=ExtResource("3_dwsf3")]
-position = Vector2(1016, 16)
-collision_mask = 2
-hint_text = "Chạm vào bánh răng để lưu "
 
 [node name="Path2D" parent="." instance=ExtResource("5_5usqu")]
 position = Vector2(1350, -66)
@@ -136,3 +116,32 @@ offset_bottom = 40.0
 script = ExtResource("14_wxig3")
 container_ids = PackedStringArray("1")
 metadata/_custom_type_script = "uid://d0ptqnbudhkyj"
+[node name="Hints" type="Node" parent="."]
+
+[node name="Movement" parent="Hints" instance=ExtResource("3_dwsf3")]
+visible = false
+position = Vector2(-201, -16)
+collision_mask = 2
+hint_text = "A/D để di chuyển"
+
+[node name="Jump" parent="Hints" instance=ExtResource("3_dwsf3")]
+position = Vector2(183, -17)
+collision_mask = 2
+hint_text = "Space/W để nhảy"
+
+[node name="Attack" parent="Hints" instance=ExtResource("3_dwsf3")]
+position = Vector2(753, -80)
+collision_mask = 2
+hint_text = "Nhấn C để tấn công"
+
+[node name="Check_Point" parent="Hints" instance=ExtResource("3_dwsf3")]
+position = Vector2(1016, 16)
+collision_mask = 2
+hint_text = "Chạm vào bánh răng để lưu "
+
+[node name="Mushroom" parent="Hints" instance=ExtResource("3_dwsf3")]
+position = Vector2(980, -529)
+hint_text = "Đạp nấm rẽ gió ! "
+
+[connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@71260" to="TileMapLayer/@Area2D@71260" method="_on_body_entered"]
