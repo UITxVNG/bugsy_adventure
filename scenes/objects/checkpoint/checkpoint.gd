@@ -13,6 +13,7 @@ signal checkpoint_activated(checkpoint_id: String)
 
 @export var checkpoint_id: String = ""
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var is_activated: bool = false
 
@@ -48,6 +49,9 @@ func activate() -> void:
 		return
 
 	is_activated = true
+	
+	# Play activation animation
+	animated_sprite.play("active")
 
 	GameManager.save_checkpoint(checkpoint_id)
 
@@ -63,5 +67,6 @@ func activate() -> void:
 func activate_visual_only() -> void:
 
 	is_activated = true
-
-	# Need animation for already activated checkpoints
+	
+	# Show idle animation for already activated checkpoint
+	animated_sprite.play("idle")
