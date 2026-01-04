@@ -222,6 +222,10 @@ func change_stage(stage_path: String, _target_portal_name: String = "") -> void:
 	current_stage = null
 	player = null
 	is_initial_load = false
+	
+	# Stop any active Dialogic dialog to prevent portrait errors
+	_stop_dialogic_safely()
+	
 	get_tree().change_scene_to_file(stage_path)
 	print("Changing stage to: ", stage_path)
 
@@ -321,15 +325,51 @@ func respawn_at_checkpoint() -> void:
 	print("Player respawned at checkpoint: ", current_checkpoint_id)
 
 func player_died() -> void:
-	should_respawn_at_checkpoint = true
-	if current_stage != null:
-		get_tree().reload_current_scene()
+	# Stop any active Dialogic dialog to prevent portrait errors
+	_stop_dialogic_safely()
+	
+	# Check if we have a valid checkpoint
+	if has_checkpoint():
+		should_respawn_at_checkpoint = true
+		var checkpoint_info = checkpoint_data.get(current_checkpoint_id, {})
+		var checkpoint_stage = checkpoint_info.get("stage_path", "")
+		
+		if not checkpoint_stage.is_empty():
+			# Defer the stage change to next frame
+			call_deferred("_change_stage_deferred", checkpoint_stage)
+		elif current_stage != null:
+			# Checkpoint exists but no stage path, reload current scene
+			call_deferred("_reload_scene")
 	else:
-		if not current_checkpoint_id.is_empty():
-			var checkpoint_info = checkpoint_data.get(current_checkpoint_id, {})
-			var checkpoint_stage = checkpoint_info.get("stage_path", "")
-			if not checkpoint_stage.is_empty():
-				change_stage(checkpoint_stage, "")
+		# No checkpoint saved - reload current scene from beginning
+		should_respawn_at_checkpoint = false
+		if current_stage != null:
+			call_deferred("_reload_scene")
+		else:
+			# Fallback: get current scene and reload it
+			var current_scene = get_tree().current_scene
+			if current_scene != null and not current_scene.scene_file_path.is_empty():
+				call_deferred("_change_stage_deferred", current_scene.scene_file_path)
+			else:
+				push_error("Cannot respawn: no checkpoint and no valid current scene")
+
+func _stop_dialogic_safely() -> void:
+	"""Stop Dialogic dialog safely to prevent freed node errors during scene changes"""
+	# Safety check - ensure we have a valid tree
+	if not is_inside_tree():
+		return
+	
+	if Dialogic.current_timeline != null:
+		Dialogic.end_timeline(true)
+	# Clear portrait state to prevent freed node errors
+	if Dialogic.has_subsystem("Portraits") and Dialogic.is_inside_tree():
+		Dialogic.Portraits.clear_game_state()
+
+func _reload_scene() -> void:
+	get_tree().reload_current_scene()
+
+func _change_stage_deferred(stage_path: String) -> void:
+	change_stage(stage_path, "")
 
 func has_checkpoint() -> bool:
 	return not current_checkpoint_id.is_empty()

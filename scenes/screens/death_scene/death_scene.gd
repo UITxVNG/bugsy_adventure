@@ -23,5 +23,14 @@ func _on_play_again_button_pressed() -> void:
 
 func _on_level_select_button_pressed() -> void:
 	get_tree().paused = false
+	# Clear Dialogic state before scene change
+	_stop_dialogic_safely()
 	# Go back to level select screen
 	get_tree().change_scene_to_file("res://scenes/levels/chose_level/chose_level.tscn")
+
+
+func _stop_dialogic_safely() -> void:
+	if Dialogic.current_timeline != null:
+		Dialogic.end_timeline(true)
+	if Dialogic.has_subsystem("Portraits") and Dialogic.is_inside_tree():
+		Dialogic.Portraits.clear_game_state()
