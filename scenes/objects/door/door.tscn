@@ -103,4 +103,5 @@ script = ExtResource("4_l7mgg")
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_7l4jk")
 
+[connection signal="body_entered" from="InteractiveArea2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="interacted" from="InteractiveArea2D" to="." method="_on_interactive_area_2d_interacted"]

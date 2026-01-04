@@ -335,11 +335,16 @@ func player_died() -> void:
 		var checkpoint_stage = checkpoint_info.get("stage_path", "")
 		
 		if not checkpoint_stage.is_empty():
-			# Defer the stage change to next frame
-			call_deferred("_change_stage_deferred", checkpoint_stage)
+			# Load checkpoint stage without resetting should_respawn_at_checkpoint
+			call_deferred("_reload_stage_for_checkpoint", checkpoint_stage)
 		elif current_stage != null:
 			# Checkpoint exists but no stage path, reload current scene
 			call_deferred("_reload_scene")
+		else:
+			# Fallback
+			var current_scene = get_tree().current_scene
+			if current_scene != null and not current_scene.scene_file_path.is_empty():
+				call_deferred("_reload_stage_for_checkpoint", current_scene.scene_file_path)
 	else:
 		# No checkpoint saved - reload current scene from beginning
 		should_respawn_at_checkpoint = false
@@ -349,7 +354,7 @@ func player_died() -> void:
 			# Fallback: get current scene and reload it
 			var current_scene = get_tree().current_scene
 			if current_scene != null and not current_scene.scene_file_path.is_empty():
-				call_deferred("_change_stage_deferred", current_scene.scene_file_path)
+				get_tree().change_scene_to_file(current_scene.scene_file_path)
 			else:
 				push_error("Cannot respawn: no checkpoint and no valid current scene")
 
@@ -367,6 +372,15 @@ func _stop_dialogic_safely() -> void:
 
 func _reload_scene() -> void:
 	get_tree().reload_current_scene()
+
+func _reload_stage_for_checkpoint(stage_path: String) -> void:
+	"""Reload stage for checkpoint respawn - preserves should_respawn_at_checkpoint flag"""
+	current_stage = null
+	player = null
+	is_initial_load = false
+	# NOTE: We intentionally do NOT reset should_respawn_at_checkpoint here
+	get_tree().change_scene_to_file(stage_path)
+	print("Reloading stage for checkpoint respawn: ", stage_path)
 
 func _change_stage_deferred(stage_path: String) -> void:
 	change_stage(stage_path, "")
