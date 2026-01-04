@@ -76,6 +76,10 @@ func start_dialog() -> void:
 	Dialogic.timeline_ended.connect(_on_timeline_ended, CONNECT_ONE_SHOT)
 
 func _on_timeline_ended() -> void:
+	# Safety check - ensure we're still in the tree
+	if not is_inside_tree():
+		return
+	
 	var player = get_tree().get_first_node_in_group("player")
 	if player and player.has_method("set_can_move"):
 		player.set_can_move(true)

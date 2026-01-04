@@ -4,6 +4,9 @@ extends MarginContainer
 var current_max_level = 10
 
 func _ready():
+	# Ensure game is not paused when entering level select
+	get_tree().paused = false
+	
 	# Load saved progress from SaveSystem
 	current_max_level = SaveSystem.load_max_level()
 	

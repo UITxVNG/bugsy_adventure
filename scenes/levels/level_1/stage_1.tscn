@@ -116,6 +116,7 @@ offset_bottom = 40.0
 script = ExtResource("14_wxig3")
 container_ids = PackedStringArray("1")
 metadata/_custom_type_script = "uid://d0ptqnbudhkyj"
+
 [node name="Hints" type="Node" parent="."]
 
 [node name="Movement" parent="Hints" instance=ExtResource("3_dwsf3")]
@@ -144,4 +145,4 @@ position = Vector2(980, -529)
 hint_text = "Đạp nấm rẽ gió ! "
 
 [connection signal="body_entered" from="TileMapLayer/Checkpoint" to="TileMapLayer/Checkpoint" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@71260" to="TileMapLayer/@Area2D@71260" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@27216" to="TileMapLayer/@Area2D@27216" method="_on_body_entered"]

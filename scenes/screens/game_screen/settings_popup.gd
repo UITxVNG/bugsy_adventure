@@ -29,9 +29,12 @@ func _on_close_texture_button_pressed() -> void:
 	hide_popup()
 
 func _on_choose_level_button_pressed() -> void:
-	# Load and show the level selection screen
-	var choose_level_scene = preload("res://scenes/levels/chose_level/chose_level.tscn")
-	var choose_level_instance = choose_level_scene.instantiate()
-	# Add to root so it renders on top
-	get_tree().root.add_child(choose_level_instance)
-	hide_popup()
+	# Unpause the game before changing scene
+	get_tree().paused = false
+	# Clear Dialogic state before scene change
+	if Dialogic.current_timeline != null:
+		Dialogic.end_timeline(true)
+	if Dialogic.has_subsystem("Portraits") and Dialogic.is_inside_tree():
+		Dialogic.Portraits.clear_game_state()
+	# Change to level selection screen
+	get_tree().change_scene_to_file("res://scenes/levels/chose_level/chose_level.tscn")
